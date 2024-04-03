@@ -1,5 +1,6 @@
+import Layout from "@views/Layouts/Layout"
 
-
+Layout
 function App() {
   
 
