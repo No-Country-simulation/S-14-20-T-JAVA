@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 import NavBar from "@components/NavBar";
 
-import AppHeader from "@components/AppHeader";
+
 
 const Layout = ({ 
   className, 
@@ -13,14 +13,12 @@ const Layout = ({
   const hiddenHeaderPaths = ["/", "/intro"];
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
+  console.log(isNavHidden)
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
 
   return (
     <div className={className}> 
-      {/* Hide the header on the intro and landing pages */}
-      {isHeaderHidden ? null : (
-        <AppHeader />
-      )}
+      
 
       <main className="items-center flex-grow m-6">
         {children}

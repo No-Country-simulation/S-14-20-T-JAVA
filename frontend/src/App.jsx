@@ -1,15 +1,23 @@
-import Layout from "@views/Layouts/Layout"
+import Layout from "@views/layouts/Layout"
+import Intro from "@views/Intro"
+import SplashScreen from "@views/SplashScreen"
 
-Layout
+import { Route, Routes } from "react-router-dom"
 function App() {
-  
 
+  // Forzar viewport mobile en Layout, temporalmente mientras se desarrolla solo mobile
+  // Usando dimensiones del iPhone 12 Pro (390 x 844 px)
+  const forceMobileStyles = "mx-auto max-w-[390px] max-h-[844px]"
   return (
-    <>
-  
-     <h1 className='flex mx-auto px-4 py-4 text-6xl font-bold text-slate-800 justify-items-center bg-violet-800/60'>Este, va a ser un proyecto de puta madreeee</h1>
+    <Layout className={forceMobileStyles}>
+      <Routes>
+
+      <Route path="/" element={<SplashScreen delay={3000} destination="/intro" />}/>
+      <Route path="/intro" element={<Intro/>}/>
+     
    
-    </>
+      </Routes>
+    </Layout>
   )
 }
 
