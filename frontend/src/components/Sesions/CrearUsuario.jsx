@@ -1,38 +1,46 @@
-import { Link } from "react-router-dom";
 import LogoBIzWIz from "../../Icons/LogoBIzWIz";
-import '@/styles/CreateUser.css'
+import "@/styles/CreateUser.css";
+import Buttondynamic from "../Buttondynamic";
+import InputComponents from "../InputComponents";
 
 export default function CrearUsuario() {
   return (
-    <div className="h-screen bg-primary  pt-12 
-    flex flex-col items-center gap-12 justify-between">
+    <div
+      className="h-screen bg-primary  pt-12 
+    flex flex-col items-center gap-12 justify-between"
+    >
       <section>
-        <LogoBIzWIz/>
-      </section>
-      
-      <div className="formulario bg-white py-12 px-4 h-full
-      flex items-center flex-col w-[101%]">
-      <section className="mb-4">
-        <h6 className="font-black text-xl">Crear cuenta</h6>
-        <p className="text-[14px] opacity-75">Bienvenido a BizWiz</p>
+        <LogoBIzWIz />
       </section>
 
-      <form className="flex flex-col gap-3 w-full  text-[#717171]" action="" method="">   
-       <input className="border-solid border-[#717171] border-[1px] p-3 h-[40px]  rounded-full" type="text" placeholder="Nombre y apellido"/>
-       <input className="border-solid border-[#717171] border-[1px] p-3 h-[40px] rounded-full" type="email" placeholder="Correo electrónico"/>
-       <input className="border-solid border-[#717171] border-[1px] p-3  h-[40px] rounded-full" type="password" placeholder="Contraseña"/>
-       <input className='h-[45px] bg-primary rounded-full w-[211px]
-         text-white font-black ml-auto mt-3' type="button" value='Crear cuenta'/>
-      </form>
+      <div
+        className="formulario bg-white py-12 px-4 h-full
+      flex items-center flex-col w-[101%]"
+      >
+        <section className="mb-4">
+          <h6 className="font-black text-xl">Crear cuenta</h6>
+          <p className="text-[14px] opacity-75">Bienvenido a BizWiz</p>
+        </section>
 
-      <div className="bg-primary rounded-full h-[50px] text-xs mt-auto  flex  ">
-        <Link className="flex items-center justify-center text-white h-full w-[115px] " to={'/'}>Iniciar sesión</Link>
-        <Link className="flex items-center justify-center
-          bg-[#F5F5F5] rounded-full w-[116px]  shadow-[-5px_1px_4px_0px_#00000038]" to={'/createuser'}>Crear cuenta</Link>
+        <form
+          className="flex flex-col gap-3 w-full  text-[#717171]"
+          action=""
+          method=""
+        >
+          <InputComponents place="Nombre y Apellido" type="text" />
+          <InputComponents place="Correo Electronico" type="email" />
+
+          <InputComponents place="Contraseña" type="password" />
+          
+        </form>
+
+        <Buttondynamic
+          name="Inciar Sesion"
+          name2="Crear Cuenta"
+          to="/"
+          to2="/createuser"
+        />
       </div>
-      </div>
-      
-      
     </div>
-  )
+  );
 }
