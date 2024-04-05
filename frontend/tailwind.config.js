@@ -40,6 +40,14 @@ export default {
     },
     animation: {
       'bounce-twice-and-fade': 'bounce-twice-and-fade 3.5s linear'
+    },
+    clipPath: {
+      'custom-shape': 'inset(0 0 0 0 round 0% 20% 0% 0%)',
+    },
+    utilities: {
+      'custom-shape': {
+        clipPath: 'inset(0 0 0 0 round 0% 20% 0% 0%)',
+      },
     }
     
   },

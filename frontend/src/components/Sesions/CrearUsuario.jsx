@@ -10,7 +10,7 @@ export default function CrearUsuario() {
         <LogoBIzWIz/>
       </section>
       
-      <div className="formulario bg-white py-12 px-4 h-full
+      <div className="custom-shape bg-white py-12 px-4 h-full
       flex items-center flex-col w-[101%]">
       <section className="mb-4">
         <h6 className="font-black text-xl">Crear cuenta</h6>

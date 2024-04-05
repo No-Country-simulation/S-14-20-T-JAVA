@@ -15,7 +15,7 @@ function App() {
       <Routes>
      
       <Route path="/createuser" element={<CrearUsuario/>} />
-      <Route path="/" element={<SplashScreen delay={3000} destination="/intro" />}/>
+      <Route path="/" element={<SplashScreen delay={3500} destination="/intro" />}/>
       <Route path="/intro" element={<Intro/>}/>
      
    
