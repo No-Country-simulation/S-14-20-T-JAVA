@@ -1,4 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
+import IconSearch from "../Icons/IconSearch";
+import IconHome from "../Icons/IconHome";
 
 
 export default function NavBar() {
@@ -13,11 +15,15 @@ export default function NavBar() {
   
     return (
     <nav className="">
-      <NavLink to={`${modo}/home`} className={navLinkClasses}>
+      <NavLink to={`${modo}/home`} 
+      //</nav> className={navLinkClasses}
+      >
         <IconHome />
         <span className="sr-only btm-nav-label">Home</span>
       </NavLink>
-      <NavLink to={`${modo}/search`} className={navLinkClasses}>
+      <NavLink to={`${modo}/search`} 
+      //</nav>className={navLinkClasses}
+      >
         <IconSearch />
         <span className="sr-only btm-nav-label">Buscar</span>
       </NavLink>

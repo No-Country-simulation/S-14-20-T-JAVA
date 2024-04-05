@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 AppLogo
-export default function SplashScreen({  
+export  default function SplashScreen({  
 delay,
 destination
 }) {
