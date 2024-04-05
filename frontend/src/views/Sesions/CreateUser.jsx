@@ -1,9 +1,8 @@
-import LogoBIzWIz from "../../Icons/LogoBIzWIz";
-import "@/styles/CreateUser.css";
-import Buttondynamic from "../Buttondynamic";
-import InputComponents from "../InputComponents";
+import LogoBIzWIz from "@components/icons/LogoBIzWIz";
+import Buttondynamic from "@components/Buttondynamic";
+import InputComponents from "@components/InputComponents";
 
-export default function CrearUsuario() {
+export default function CreateUser() {
   return (
     <div
       className="h-screen bg-primary  pt-12 
@@ -14,7 +13,7 @@ export default function CrearUsuario() {
       </section>
 
       <div
-        className="formulario bg-white py-12 px-4 h-full
+        className="rounded-tr-[20%] bg-white py-12 px-4 h-full
       flex items-center flex-col w-[101%]"
       >
         <section className="mb-4">
