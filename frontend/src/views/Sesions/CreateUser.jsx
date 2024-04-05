@@ -9,7 +9,7 @@ export default function CreateUser() {
     flex flex-col items-center gap-12 justify-between"
     >
       <section>
-        <LogoBIzWIz />
+        <LogoBIzWIz color="positive" />
       </section>
 
       <div

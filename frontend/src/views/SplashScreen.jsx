@@ -1,8 +1,8 @@
-import AppLogo from "@/components/AppLogo";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LogoBIzWIz from "@components/icons/LogoBIzWIz";
 
-AppLogo
+
 export  default function SplashScreen({  
 delay,
 destination
@@ -25,7 +25,7 @@ destination
             
           `}>
             <div className="animate-bounce-twice-and-fade "> 
-            <AppLogo className="shadow-xl drop-shadow-md" />
+            <LogoBIzWIz color="positive" className="shadow-xl drop-shadow-md" />
 
             </div>
           </section>
