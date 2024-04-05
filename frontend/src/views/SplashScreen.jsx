@@ -22,9 +22,12 @@ destination
     return (
         <section className={
             `flex flex-col items-center justify-center h-dvh gap-8 bg-primary
-            *:duration-1000 *:animate-in *:fade-in *:slide-in-from-bottom
+            
           `}>
+            <div className="animate-bounce-twice-and-fade "> 
             <AppLogo className="shadow-xl drop-shadow-md" />
+
+            </div>
           </section>
   )
 }

@@ -27,8 +27,21 @@ export default {
         'alert':'#DCBD4C',
         'check':'#79B465'
 
+      },
+
+    },
+    keyframes: {
+      'bounce-twice-and-fade': {
+        '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+        '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
+        '75%': { opacity: 1 },
+        '100%': { opacity: 0 }
       }
     },
+    animation: {
+      'bounce-twice-and-fade': 'bounce-twice-and-fade 3.5s linear'
+    }
+    
   },
   plugins: [],
 }
