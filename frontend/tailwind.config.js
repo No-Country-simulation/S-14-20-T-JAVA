@@ -36,19 +36,18 @@ export default {
         '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
         '75%': { opacity: 1 },
         '100%': { opacity: 0 }
-      }
+      },
+      'fade-in': {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
+      },
     },
     animation: {
-      'bounce-twice-and-fade': 'bounce-twice-and-fade 3.5s linear'
+      'bounce-twice-and-fade': 'bounce-twice-and-fade 3.2s linear',
+      'fade-in': 'fade-in 1s ease-in-out',
+        'fade-in-delay': 'fade-in 1s ease-in-out 1s',
     },
-    clipPath: {
-      'custom-shape': 'inset(0 0 0 0 round 0% 20% 0% 0%)',
-    },
-    utilities: {
-      'custom-shape': {
-        clipPath: 'inset(0 0 0 0 round 0% 20% 0% 0%)',
-      },
-    }
+   
     
   },
   plugins: [],

@@ -21,7 +21,7 @@ destination
 
     return (
         <section className={
-            `flex flex-col items-center justify-center h-dvh gap-8 bg-primary
+            `flex flex-col items-center justify-center h-dvh gap-8 bg-primary animate-fade-in
             
           `}>
             <div className="animate-bounce-twice-and-fade "> 
