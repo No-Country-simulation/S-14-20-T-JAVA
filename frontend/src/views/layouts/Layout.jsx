@@ -17,7 +17,7 @@ const Layout = ({
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
 
   return (
-    <div className={className}> 
+    <div className={ className}> 
       
 
       <main className="items-center flex-grow m-6">
