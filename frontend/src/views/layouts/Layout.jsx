@@ -23,13 +23,13 @@ const Layout = ({
       <main className="items-center flex-grow m-6">
         {children}
       </main>
-
-      {/* Hide the footer on the intro and landing pages */}
+//!ESTO ESTÁ DESACTIVADO POR AHORA 
+      {/* Hide the footer on the intro and landing pages
       {isNavHidden ? null : (
         <footer>
           <NavBar />
         </footer>
-      )}
+      )} */}
     </div>
   );
 }

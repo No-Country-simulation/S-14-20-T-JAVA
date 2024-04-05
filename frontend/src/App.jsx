@@ -4,7 +4,7 @@ import SplashScreen from "@views/SplashScreen"
 
 import { Route, Routes } from "react-router-dom"
 
-import CrearUsuario from "./components/Sesions/CrearUsuario"
+import CreateUser from "@/views/Sesions/CreateUser"
 function App() {
 
   // Forzar viewport mobile en Layout, temporalmente mientras se desarrolla solo mobile
@@ -14,7 +14,7 @@ function App() {
     <Layout className={forceMobileStyles}>
       <Routes>
      
-      <Route path="/createuser" element={<CrearUsuario/>} />
+      <Route path="/createuser" element={<CreateUser/>} />
       <Route path="/" element={<SplashScreen delay={3000} destination="/intro" />}/>
       <Route path="/intro" element={<Intro/>}/>
      

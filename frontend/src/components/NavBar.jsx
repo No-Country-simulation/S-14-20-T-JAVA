@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
-import IconSearch from "../Icons/IconSearch";
-import IconHome from "../Icons/IconHome";
+import IconSearch from "@components/icons/IconSearch";
+import IconHome from "@components/icons/IconHome";
 
 
 export default function NavBar() {
