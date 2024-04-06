@@ -6,7 +6,7 @@ export default function CreateUser() {
   return (
     <div
       className="h-screen bg-primary  pt-12 
-    flex flex-col items-center gap-12 justify-between animate-fade-in"
+    flex flex-col items-center gap-12 justify-between "
     >
       <section>
         <LogoBIzWIz color="positive" />
@@ -14,7 +14,7 @@ export default function CreateUser() {
 
       <div
         className="rounded-tr-[20%] bg-white py-12 px-4 h-full
-      flex items-center flex-col w-[101%]"
+      flex items-center flex-col w-[101%] animate-fade-in"
       >
         <section className="mb-4">
           <h6 className="font-black text-xl">Crear cuenta</h6>
