@@ -6,7 +6,7 @@ export default function CreateUser() {
   return (
     <div
       className="h-screen bg-primary  pt-12 
-    flex flex-col items-center gap-12 justify-between"
+    flex flex-col items-center gap-12 justify-between animate-fade-in"
     >
       <section>
         <LogoBIzWIz color="positive" />

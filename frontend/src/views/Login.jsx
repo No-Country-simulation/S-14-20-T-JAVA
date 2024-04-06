@@ -2,11 +2,12 @@
 import LogoBIzWIz from "@components/icons/LogoBIzWIz";
 import Buttondynamic from "@components/Buttondynamic";
 import InputComponents from "@components/InputComponents";
+import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <div
       className="h-screen bg-white  pt-12 
-    flex flex-col items-center gap-12 justify-between"
+    flex flex-col items-center gap-12 justify-between animate-fade-in"
     >
       <section>
         <LogoBIzWIz color="" />
@@ -30,7 +31,7 @@ export default function Login() {
           <InputComponents place="Contraseña" type="password" />
           
         </form>
-
+            <Link to="/forgotpassword" className="text-white mt-4">¿Olvidaste tu contraseña?</Link>
         <Buttondynamic
           name="Iniciar Sesion"
           name2="Crear Cuenta"
