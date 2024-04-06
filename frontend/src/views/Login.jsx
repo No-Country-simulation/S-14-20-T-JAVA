@@ -33,7 +33,13 @@ export default function Login() {
         </form>
             <Link to="/forgotpassword" className="text-white mt-4">¿Olvidaste tu contraseña?</Link>
 
-            <button className={`${classCreate} font-semibold w-[211px] p-[13px-24px-13px-24px]`}>Iniciar sesión</button>
+            <input className='h-[45px] bg-white rounded-full w-[211px]
+          font-semibold ml-auto mt-3' type="button" value='Iniciar sesión'/>
+          <div className="flex items-center justify-between">
+  <div className="h-[1px] bg-gray-300 flex-grow"></div>
+  <span className="mx-4 text-gray-400">o</span>
+  <div className="h-[1px] bg-gray-300 flex-grow"></div>
+</div>
         <Buttondynamic
           name="Iniciar Sesion"
           name2="Crear Cuenta"

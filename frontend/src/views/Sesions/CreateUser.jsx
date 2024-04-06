@@ -31,6 +31,8 @@ export default function CreateUser() {
 
           <InputComponents place="Contraseña" type="password" />
           
+          <input className='h-[45px] bg-primary rounded-full w-[211px]
+         text-white font-black ml-auto mt-3' type="button" value='Crear cuenta'/>
         </form>
 
         <Buttondynamic
