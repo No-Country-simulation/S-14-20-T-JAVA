@@ -20,11 +20,12 @@ const Layout = ({
     <div className={ className}> 
       
 
-      <main className="items-center flex-grow m-6">
+      <main className="items-center">
         {children}
       </main>
+      {/*
 //!ESTO ESTÁ DESACTIVADO POR AHORA 
-      {/* Hide the footer on the intro and landing pages
+       Hide the footer on the intro and landing pages
       {isNavHidden ? null : (
         <footer>
           <NavBar />

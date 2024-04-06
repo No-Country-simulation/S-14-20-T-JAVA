@@ -14,7 +14,7 @@ export default {
         //secundarios
         'secondary':'#65006F',
         'white':'#FFFFFF',
-        'text-disabled':'#717171',
+        'disabled':'#717171',
         // gradientes
         //TODO! ARMAR UNA CLASE PARA USAR SOLO UN CODIGO PARA GRADIENTE, por el momento agrego "codigo-v-start" - "codigo-v-end"
         'degraded-v-start':'#851291',
@@ -27,6 +27,9 @@ export default {
         'alert':'#DCBD4C',
         'check':'#79B465'
 
+      },
+      fontFamily: {
+        'roboto-flex': ['Roboto Flex', 'sans-serif'],
       },
 
     },

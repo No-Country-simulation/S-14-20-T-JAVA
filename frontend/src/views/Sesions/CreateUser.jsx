@@ -34,9 +34,9 @@ export default function CreateUser() {
         </form>
 
         <Buttondynamic
-          name="Inciar Sesion"
+          name="Iniciar Sesion"
           name2="Crear Cuenta"
-          to="/"
+          to="/login"
           to2="/createuser"
         />
       </div>

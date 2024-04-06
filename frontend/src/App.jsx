@@ -9,7 +9,7 @@ function App() {
 
   // Forzar viewport mobile en Layout, temporalmente mientras se desarrolla solo mobile
   // Usando dimensiones del iPhone 12 Pro (390 x 844 px)
-  const forceMobileStyles = "mx-auto max-w-[390px] max-h-[844px]"
+  const forceMobileStyles = "mx-auto max-w-[430px] max-h-[844px]"
   return (
     <Layout className={forceMobileStyles}>
       <Routes>
