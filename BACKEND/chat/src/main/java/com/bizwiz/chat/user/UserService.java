@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public void disconnect(UserChat user){
-        var storedUser = respository.findById(user.getId())
+        var storedUser = respository.findById(user.getNickName())
                 .orElse(null);
         if(storedUser != null){
             storedUser.setStatus(Status.OFFLINE);

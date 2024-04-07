@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class UserChat {
     @Id
-    private Long id;
     private String nickName;
+    private String fullName;
     private Status status;
 }

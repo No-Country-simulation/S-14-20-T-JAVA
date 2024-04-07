@@ -1,8 +1,8 @@
 spring:
   data:
     mongodb:
-      username: user
-      password: pass
+      username: root
+      password: password
       host: localhost
       port: 27017
       database: chat
@@ -10,3 +10,4 @@ spring:
 
 server:
   port: 9003
+
