@@ -10,4 +10,5 @@ export const GeneralButton = ({ name, to }) => {
             {name}
         </Link>
     );
+    
 };
