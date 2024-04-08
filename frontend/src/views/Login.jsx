@@ -3,6 +3,7 @@ import LogoBIzWIz from "@components/icons/LogoBIzWIz";
 import Buttondynamic ,{classCreate} from "@components/Buttondynamic";
 import InputComponents from "@components/InputComponents";
 import { Link } from "react-router-dom";
+import { GoogleIcon } from "@/components/icons/GoogleIcon";
 export default function Login() {
   return (
     <div
@@ -14,7 +15,7 @@ export default function Login() {
       </section>
 
       <div
-        className="rounded-tr-[100px] rounded-b-[50px] bg-gradient-to-b from-degraded-v-start to-degraded-h-end py-12 px-4 h-full
+        className="rounded-tr-[100px]  bg-gradient-to-b from-degraded-v-start to-degraded-h-end py-12 px-4 h-full
       flex items-center flex-col w-[101%] animate-fade-in"
       >
         <section className="mb-4 text-white text-center">
@@ -31,15 +32,17 @@ export default function Login() {
           <InputComponents place="Contraseña" type="password" />
           
         </form>
-            <Link to="/forgotpassword" className="text-white mt-4">¿Olvidaste tu contraseña?</Link>
+            <Link to="/forgotpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
 
             <input className='h-[45px] bg-white rounded-full w-[211px]
-          font-semibold ml-auto mt-3' type="button" value='Iniciar sesión'/>
-          <div className="flex items-center justify-between">
-  <div className="h-[1px] bg-gray-300 flex-grow"></div>
-  <span className="mx-4 text-gray-400">o</span>
-  <div className="h-[1px] bg-gray-300 flex-grow"></div>
+          font-semibold ml-auto my-4' type="button" value='Iniciar sesión'/>
+<div className="flex flex-row w-full mt-2 items-center justify-center">
+
+          <hr className="bg-white w-1/2 border-dotted"/>
+          <p className=" p-2 font-normal text-white"> O </p>
+          <hr className="bg-white w-1/2 border-dotted"/>
 </div>
+<GoogleIcon/>
         <Buttondynamic
           name="Iniciar Sesion"
           name2="Crear Cuenta"
