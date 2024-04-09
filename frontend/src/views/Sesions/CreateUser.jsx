@@ -6,15 +6,15 @@ export default function CreateUser() {
   return (
     <div
       className="h-screen bg-primary  pt-12 
-    flex flex-col items-center gap-12 justify-between"
+    flex flex-col items-center gap-12 justify-between "
     >
       <section>
-        <LogoBIzWIz />
+        <LogoBIzWIz color="positive" />
       </section>
 
       <div
         className="rounded-tr-[20%] bg-white py-12 px-4 h-full
-      flex items-center flex-col w-[101%]"
+      flex items-center flex-col w-[101%] animate-fade-in-delay"
       >
         <section className="mb-4">
           <h6 className="font-black text-xl">Crear cuenta</h6>
@@ -31,12 +31,14 @@ export default function CreateUser() {
 
           <InputComponents place="Contraseña" type="password" />
           
+          <input className='h-[45px] bg-primary rounded-full w-[211px]
+         text-white font-black ml-auto mt-3' type="button" value='Crear cuenta'/>
         </form>
 
         <Buttondynamic
-          name="Inciar Sesion"
+          name="Iniciar Sesion"
           name2="Crear Cuenta"
-          to="/"
+          to="/login"
           to2="/createuser"
         />
       </div>

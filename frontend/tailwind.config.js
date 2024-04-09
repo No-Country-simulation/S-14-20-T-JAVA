@@ -14,7 +14,7 @@ export default {
         //secundarios
         'secondary':'#65006F',
         'white':'#FFFFFF',
-        'text-disabled':'#717171',
+        'disabled':'#717171',
         // gradientes
         //TODO! ARMAR UNA CLASE PARA USAR SOLO UN CODIGO PARA GRADIENTE, por el momento agrego "codigo-v-start" - "codigo-v-end"
         'degraded-v-start':'#851291',
@@ -28,6 +28,9 @@ export default {
         'check':'#79B465'
 
       },
+      fontFamily: {
+        'roboto-flex': ['Roboto Flex', 'sans-serif'],
+      },
 
     },
     keyframes: {
@@ -36,19 +39,18 @@ export default {
         '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
         '75%': { opacity: 1 },
         '100%': { opacity: 0 }
-      }
+      },
+      'fade-in': {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
+      },
     },
     animation: {
-      'bounce-twice-and-fade': 'bounce-twice-and-fade 3.5s linear'
+      'bounce-twice-and-fade': 'bounce-twice-and-fade 3.2s linear',
+      'fade-in': 'fade-in 1s ease-in-out',
+      'fade-in-delay': 'fade-in 0.5s ease-in-out',
     },
-    clipPath: {
-      'custom-shape': 'inset(0 0 0 0 round 0% 20% 0% 0%)',
-    },
-    utilities: {
-      'custom-shape': {
-        clipPath: 'inset(0 0 0 0 round 0% 20% 0% 0%)',
-      },
-    }
+   
     
   },
   plugins: [],
