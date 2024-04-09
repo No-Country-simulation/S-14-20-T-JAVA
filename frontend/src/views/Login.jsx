@@ -16,7 +16,7 @@ export default function Login() {
 
       <div
         className="rounded-tr-[100px]  bg-gradient-to-b from-degraded-v-start to-degraded-h-end py-12 px-4 h-full
-      flex items-center flex-col w-[101%] animate-fade-in"
+      flex items-center flex-col w-[101%] animate-fade-in-delay"
       >
         <section className="mb-4 text-white text-center">
           <h6 className="font-black text-xl">Iniciar sesión</h6>

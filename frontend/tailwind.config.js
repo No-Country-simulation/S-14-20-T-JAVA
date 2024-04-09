@@ -48,7 +48,7 @@ export default {
     animation: {
       'bounce-twice-and-fade': 'bounce-twice-and-fade 3.2s linear',
       'fade-in': 'fade-in 1s ease-in-out',
-        'fade-in-delay': 'fade-in 1s ease-in-out 1s',
+      'fade-in-delay': 'fade-in 0.5s ease-in-out',
     },
    
     

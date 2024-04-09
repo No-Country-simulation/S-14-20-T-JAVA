@@ -14,7 +14,7 @@ export default function CreateUser() {
 
       <div
         className="rounded-tr-[20%] bg-white py-12 px-4 h-full
-      flex items-center flex-col w-[101%] animate-fade-in"
+      flex items-center flex-col w-[101%] animate-fade-in-delay"
       >
         <section className="mb-4">
           <h6 className="font-black text-xl">Crear cuenta</h6>
