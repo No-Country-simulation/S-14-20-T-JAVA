@@ -16,7 +16,7 @@ export default function Login() {
 
       <div
         className="rounded-tr-[100px]  bg-gradient-to-b from-degraded-v-start to-degraded-h-end py-12 px-4 h-full
-      flex items-center flex-col w-[101%] animate-fade-in-delay"
+      flex items-center flex-col w-[101%] animate-fade-in"
       >
         <section className="mb-4 text-white text-center">
           <h6 className="font-black text-xl">Iniciar sesión</h6>
@@ -33,9 +33,10 @@ export default function Login() {
           
         </form>
             <Link to="/forgotpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
-
+          <Link to="/home" className="block ml-auto my-4">
             <input className='h-[45px] bg-white rounded-full w-[211px]
-          font-semibold ml-auto my-4' type="button" value='Iniciar sesión'/>
+          font-semibold ' type="button" value='Iniciar sesión'/>
+          </Link>
 <div className="flex flex-row w-full mt-2 items-center justify-center">
 
           <hr className="bg-white w-1/2 border-dotted"/>
