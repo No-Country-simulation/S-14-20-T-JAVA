@@ -1,6 +1,9 @@
+import { Posts } from "./Posts"
 
 export const Home = () => {
   return (
-    <main className="bg-primary"> aca va la Home</main>
+    <main className="h-[800px] animate-fade-in-delay rounded-sm"> 
+    <Posts/>
+    </main>
   )
 }

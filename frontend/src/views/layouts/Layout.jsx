@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 
-import LogoBIzWIz from "@components/icons/LogoBIzWIz";
 
 import NavBar from "@components/NavBar";
+import { Header } from "@components/Header";
 
 
 
@@ -21,13 +21,11 @@ const Layout = ({
   return (
     <div className={ className}> 
       
-    <header>
+    
       {isHeaderHidden ? null : (
-        <div className="flex justify-between">
-          <LogoBIzWIz />
-        </div>
+        <Header/>
       )}
-    </header>
+    
       <main className="items-center">
         {children}
       </main>
