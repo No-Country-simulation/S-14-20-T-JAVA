@@ -33,9 +33,10 @@ export default function Login() {
           
         </form>
             <Link to="/forgotpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
-
+          <Link to="/home" className="block ml-auto my-4">
             <input className='h-[45px] bg-white rounded-full w-[211px]
-          font-semibold ml-auto my-4' type="button" value='Iniciar sesión'/>
+          font-semibold ' type="button" value='Iniciar sesión'/>
+          </Link>
 <div className="flex flex-row w-full mt-2 items-center justify-center">
 
           <hr className="bg-white w-1/2 border-dotted"/>
