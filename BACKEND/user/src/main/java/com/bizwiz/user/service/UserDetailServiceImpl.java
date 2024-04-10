@@ -19,7 +19,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-
     /* Este metodo permite que spring en segundo plano busque si el usuario existe en la base de datos
      * Su función principal es cargar los detalles de un usuario a partir de su nombre de usuario, para ser utilizado en el proceso de autenticación. */
     @Override
@@ -28,7 +27,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         UserEntity userEntity = userRepository.findUserEntityByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("El usuario "+username+" no existe"));
 
-        //Creacion de roles y permisos
+        //Creacion de roles
         List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
 
         //Añadimos roles a la lista authorityList
