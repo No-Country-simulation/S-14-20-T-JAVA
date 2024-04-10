@@ -29,13 +29,13 @@ public class UserApplication {
 					.password("$2a$10$Rn5dqssiYpaiRiKA30Hi..3ZU38waxJ.JAcoPwV06nSk06S6Vk6ly")
 					.role(Role.valueOf("ADMIN"))
 					.build();
-			UserEntity userValen = UserEntity.builder()
-					.username("valentina")
+			UserEntity userPedro = UserEntity.builder()
+					.username("pedro")
 					.password("$2a$10$Rn5dqssiYpaiRiKA30Hi..3ZU38waxJ.JAcoPwV06nSk06S6Vk6ly")
 					.role(Role.valueOf("USER"))
 					.build();
 
-			userRepository.saveAll(List.of(userElian, userValen));
+			userRepository.saveAll(List.of(userElian, userPedro));
 		};
 	}
 }

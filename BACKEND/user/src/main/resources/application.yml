@@ -6,7 +6,7 @@ spring:
     name: user
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database-platform: org.hibernate.dialect.MySQL8Dialect
   datasource:
     url: jdbc:mysql://localhost:3306/user?serverTimezone=UTC

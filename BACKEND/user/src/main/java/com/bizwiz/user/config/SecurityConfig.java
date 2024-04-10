@@ -44,14 +44,26 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-                // Deshabilita CSRF
                 .csrf(csrf -> csrf.disable())
-                // Establece la política de creación de sesiones como STATELESS (sin estado)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // Configura el proveedor de autenticación y el filtro JWT
+                .authorizeHttpRequests(http -> {
+                    //configuro endpoints publicos
+                    http.requestMatchers(HttpMethod.GET, "/auth/hello").permitAll();
+                    http.requestMatchers(HttpMethod.POST, "/auth/**").permitAll();
+
+                    //configuro endpoints privados
+                    http.requestMatchers(HttpMethod.GET, "/auth/helloSecured").hasRole("ADMIN");
+                    http.requestMatchers(HttpMethod.GET, "/auth/helloSecured2").hasAnyRole("ADMIN","USER");
+
+                    //configuro endpoints no especificados
+                    http.anyRequest().authenticated();
+                    //http.anyRequest().denyAll();
+
+                })
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
+
     }
 
     //Creamos el bean del authentication manager el cual va a encargarse de las autenticaciones

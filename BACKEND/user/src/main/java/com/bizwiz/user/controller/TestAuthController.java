@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@EnableWebSecurity
 public class TestAuthController {
 
     @GetMapping("/hello")
@@ -19,13 +18,11 @@ public class TestAuthController {
     }
 
     @GetMapping("/helloSecured")
-    @PreAuthorize("hasRole('ADMIN')")
     public String helloSecured(){
         return "Hello Secured";
     }
 
     @GetMapping("/helloSecured2")
-    @PreAuthorize("hasAuthority('READ') or hasAuthority('CREATE')")
     public String helloSecured2(){
         return "Hello Secured2";
     }
