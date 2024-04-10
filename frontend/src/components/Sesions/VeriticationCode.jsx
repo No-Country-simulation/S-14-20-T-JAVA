@@ -41,6 +41,7 @@ function VerificationCode() {
           bgColor={"bg-primary"}
           ColorText={"text-white"}
           Shadow={"shadow-lg"}
+          to={'/createpass'}
 
 />
       </div>
