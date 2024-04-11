@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function ButtonGeneric({bgColor,text,ColorText,Shadow}) {
+function ButtonGeneric({bgColor,text,ColorText,Shadow, to}) {
   return (
- <button type="button" className={`rounded-full w-44 p-3 ${bgColor} ${ColorText} ${Shadow}`}>
+   
+ <Link to ={to} type="button"  className={`rounded-full w-full w-44 p-3 text-center   ${bgColor} ${ColorText} ${Shadow}`}>
 
     {text}
  
- </button>
+ </Link>
+ 
   )
 }
-
 export default ButtonGeneric
 
