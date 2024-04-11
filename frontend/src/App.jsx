@@ -1,9 +1,9 @@
 import Layout from "@views/layouts/Layout";
 import Login from "@views/Login";
 import SplashScreen from "@views/SplashScreen";
-import Forgottenpassword from "./components/Sesions/Forgottenpassword";
-import VerificationCode from "./components/Sesions/VeriticationCode";
-import CreatePassword from "./components/Sesions/CreatePassword";
+import Forgottenpassword from "./views/Sesions/Forgottenpassword";
+import VerificationCode from "./views/Sesions/VeriticationCode";
+import CreatePassword from "./views/Sesions/CreatePassword";
 import { Route, Routes } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ function App() {
           element={<SplashScreen delay={3000} destination="/login" />}
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<Forgottenpassword />} />
+        <Route path="/forgottenpassword" element={<Forgottenpassword />} />
         <Route path="/verificationcode" element={<VerificationCode />} />
         <Route path="/createpass" element={<CreatePassword/>} />
       </Routes>

@@ -1,7 +1,7 @@
 import React from "react";
-import LogoBIzWIz from "../icons/LogoBIzWIz";
-import InputComponents from "../InputComponents";
-import ButtonGeneric from "../ButtonGeneric";
+import LogoBIzWIz from "../../components/icons/LogoBIzWIz";
+import InputComponents from "../../components/InputComponents";
+import ButtonGeneric from "../../components/ButtonGeneric";
 const Forgottenpassword = () => {
   return (
     <div
@@ -9,7 +9,7 @@ const Forgottenpassword = () => {
  flex flex-col items-center gap-12  justify-between "
     >
       <section>
-        <LogoBIzWIz />
+        <LogoBIzWIz color="positive" />
       </section>
       <div
          className="formulario bg-white py-12 px-4 h-full
