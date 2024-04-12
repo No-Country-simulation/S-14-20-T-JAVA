@@ -8,7 +8,7 @@ export default {
       extend: {
         colors:{
           //primarios
-          'backgroud':'F5F5F5',
+          'background':'#F5F5F5',
           'primary':'#851291',
           'primaryPressed': '#680273',
           'loginButton': '#F5F5F5',

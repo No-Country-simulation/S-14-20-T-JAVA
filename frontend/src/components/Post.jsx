@@ -1,18 +1,18 @@
 
-import fetchPhotos from "./resources/pexels"
- import { useEffect, useState } from "react"
-const Post = ({id,image}) => {
+const Post = ({id,image,user,title,body}) => {
  
   return (
-    <>
-    {
-      photos.map((picture) => (
-        <div key={picture.id}>
-        <img src={picture.src.large} alt={picture.alt} />
-        </div>
-      ))
-    }
-    </>
+    <div className="py-4">
+    <h6 className="font-black">
+      {user}
+    </h6>
+    <p>{title.substring(0,20)}...</p>
+    <section key={id}>
+      <img src={image} className="w-full" alt="" />
+      {body}
+    </section>
+
+    </div>
   );
 }
 

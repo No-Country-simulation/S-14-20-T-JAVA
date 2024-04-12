@@ -4,7 +4,7 @@ import BizwizOnlyLogo from '@components/icons/BizwizOnlyLogo'
 
 export const Header = () => {
     return (
-        <header className='flex flex-row justify-between items-center mb-16 mt-4'>
+        <header className='fixed top-0 left-0 right-0 flex flex-row justify-between items-center  bg-background z-10 p-5'>
         <BizwizOnlyLogo/>
         <BizwizOnlyLetter className="size-2"/>    
         <IconSearch/>

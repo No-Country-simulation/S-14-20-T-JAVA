@@ -32,8 +32,10 @@ export default function Login() {
           <InputComponents place="Contraseña" type="password" />
           
         </form>
+         
             <Link to="/forgottenpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
-
+          
+          <Link to="/home" className="block ml-auto my-4">
             <input className='h-[45px] bg-white rounded-full w-[211px]
           font-semibold ' type="button" value='Iniciar sesión'/>
           </Link>

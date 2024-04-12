@@ -9,7 +9,8 @@ export default function NavBar() {
    const location = useLocation();
   
     return (
-    <nav className=" flex flex-row justify-around p-8">
+    <nav className="fixed bottom-0 left-0 right-0 flex flex-row justify-around p-8  bg-background"
+    >
       <NavLink to="/home" 
       //</nav> className={navLinkClasses}
       >
