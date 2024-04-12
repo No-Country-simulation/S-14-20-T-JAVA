@@ -1,14 +1,22 @@
+import UserIconFilled from "./icons/UserIconFilled";
 
 const Post = ({id,image,user,title,body}) => {
  
   return (
     <div className="py-4">
+    <section className="grid grid-cols-2">
+    <div className="">
+    <UserIconFilled/>
+    </div>
+    <div className="text-left ">
     <h6 className="font-black">
       {user}
     </h6>
     <p>{title.substring(0,20)}...</p>
+    </div>
+    </section>
     <section key={id}>
-      <img src={image} className="w-full" alt="" />
+      <img src={image} className="" alt="" />
       {body}
     </section>
 
