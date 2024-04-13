@@ -12,7 +12,7 @@ const Post = ({id,image,user,title,body}) => {
     <h6 className="font-black">
       {user}
     </h6>
-    <p>{title.substring(0,20)}...</p>
+    <p>{title.substring(0,14)}...</p>
     </div>
     </section>
     <section key={id}>
