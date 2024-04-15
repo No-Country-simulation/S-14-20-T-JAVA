@@ -20,9 +20,9 @@ public class UserController {
     @MessageMapping("/user.addUser")
     @SendTo("/user/topic")
     public UserChat addUser(
-            @Payload UserChat user) {
+            @Payload String nickName) {
         try {
-            service.saveUser(user);
+            UserChat user = service.saveUser(nickName);
             return user;
         } catch (Exception e) {
             // Manejar la excepción y mostrarla en la consola
@@ -34,10 +34,10 @@ public class UserController {
     @MessageMapping("/user.disconnectUser")
     @SendTo("/user/topic")
     public UserChat disconnect(
-            @Payload UserChat user
+            @Payload String nickName
     ) {
         try {
-            service.disconnect(user);
+            UserChat user = service.disconnect(nickName);
             return user;
         } catch (Exception e) {
             // Manejar la excepción y mostrarla en la consola

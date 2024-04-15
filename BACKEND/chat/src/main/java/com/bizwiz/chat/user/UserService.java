@@ -9,24 +9,33 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository respository;
+    private final UserRepository repository;
 
-    public void saveUser(UserChat user){
+    public UserChat saveUser(String nickName){
+        UserChat user = repository.findById(nickName).orElse(null);
+        if(user == null){
+            UserChat.builder()
+                    .nickName(nickName)
+                    .status(Status.ONLINE)
+                    .build();
+        }
         user.setStatus(Status.ONLINE);
-        respository.save(user);
+        repository.save(user);
+        return user;
     }
 
-    public void disconnect(UserChat user){
-        var storedUser = respository.findById(user.getNickName())
+    public UserChat disconnect(String nickName){
+        var storedUser = repository.findById(nickName)
                 .orElse(null);
         if(storedUser != null){
             storedUser.setStatus(Status.OFFLINE);
-            respository.save(storedUser);
+            repository.save(storedUser);
         }
+        return storedUser;
     }
 
     public List<UserChat> findConnectUsers(){
-        return respository.findAllByStatus(Status.ONLINE);
+        return repository.findAllByStatus(Status.ONLINE);
     }
 
 }
