@@ -7,7 +7,13 @@ spring:
       port: 27017
       database: chat
       authentication-database: admin
+  application:
+    name: chat
 
 server:
   port: 9003
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
