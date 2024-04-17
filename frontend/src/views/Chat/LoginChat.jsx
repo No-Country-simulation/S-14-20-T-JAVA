@@ -15,8 +15,6 @@ async function connect(form) {
   try {
     const socket = await new SockJS('http://localhost:9003/ws');
     let stompClient = await Stomp.over(socket);
-    console.log(stompClient)
-
    await stompClient.connect({}, onConnected, onError);
   } catch (err) {
     console.error('Error connecting to socket:', err);
