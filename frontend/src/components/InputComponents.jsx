@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function InputComponents({place, type, inputName, id}) {
+ const InputComponents = ({place, type, inputName, id}) =>{
   
   return (
 
@@ -9,3 +9,4 @@ export default function InputComponents({place, type, inputName, id}) {
     
   );
 }
+export default InputComponents

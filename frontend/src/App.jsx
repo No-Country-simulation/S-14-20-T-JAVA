@@ -5,6 +5,7 @@ import SplashScreen from        "@views/SplashScreen"
 import Login from               "@views/Login"
 import CreateUser from          "@views/Sesions/CreateUser"
 import Home  from               "@views/Home"
+import LoginChat  from           "@views/Chat/LoginChat";
 import Forgottenpassword from "./views/Sesions/Forgottenpassword";
 import VerificationCode from "./views/Sesions/VeriticationCode";
 import CreatePassword from "./views/Sesions/CreatePassword";
@@ -27,6 +28,9 @@ function App() {
         <Route path="/forgottenpassword" element={<Forgottenpassword />} />
         <Route path="/verificationcode" element={<VerificationCode />} />
         <Route path="/createpass" element={<CreatePassword/>} />
+        <Route path="/chat" element={<LoginChat/>} />
+
+
       </Routes>
       
     </Layout>
