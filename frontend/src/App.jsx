@@ -5,7 +5,7 @@ import Forgottenpassword from "./views/Sesions/Forgottenpassword";
 import VerificationCode from "./views/Sesions/VeriticationCode";
 import CreatePassword from "./views/Sesions/CreatePassword";
 import { Route, Routes } from "react-router-dom";
-
+import AnotherProfile from './views/Porfile/AnotherProfile'
 
 import CreateUser from "@/views/Sesions/CreateUser";
 function App() {
@@ -16,14 +16,18 @@ function App() {
     <Layout className={forceMobileStyles}>
       <Routes>
         <Route path="/createuser" element={<CreateUser />} />
-        <Route
-          path="/"
-          element={<SplashScreen delay={3000} destination="/login" />}
-        />
+        <Route path="/" element={<SplashScreen delay={3000} destination="/login" />}/>
+
+        
         <Route path="/login" element={<Login />} />
         <Route path="/forgottenpassword" element={<Forgottenpassword />} />
         <Route path="/verificationcode" element={<VerificationCode />} />
         <Route path="/createpass" element={<CreatePassword/>} />
+
+        // descomentar para ver la pantalla profile
+        {/* <Route path="/login" element={<AnotherProfile  />} /> */}
+
+      
       </Routes>
       
     </Layout>
