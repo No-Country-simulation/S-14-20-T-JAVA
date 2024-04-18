@@ -32,7 +32,7 @@ export default function Login() {
           <InputComponents place="Contraseña" type="password" />
           
         </form>
-            <Link to="/forgotpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
+            <Link to="/forgottenpassword" className="text-white mt-6">¿Olvidaste tu contraseña?</Link>
 
             <input className='h-[45px] bg-white rounded-full w-[211px]
           font-semibold ml-auto my-4' type="button" value='Iniciar sesión'/>
