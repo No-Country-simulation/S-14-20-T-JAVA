@@ -26,6 +26,7 @@ public class UserApplication {
 			//CREATE USERS
 			UserEntity userElian = UserEntity.builder()
 					.username("elian")
+					.firstName("elian")
 					.password("$2a$10$Rn5dqssiYpaiRiKA30Hi..3ZU38waxJ.JAcoPwV06nSk06S6Vk6ly")
 					.role(Role.valueOf("ADMIN"))
 					.build();

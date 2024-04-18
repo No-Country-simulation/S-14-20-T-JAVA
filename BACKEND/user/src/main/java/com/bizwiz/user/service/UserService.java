@@ -15,6 +15,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,9 +48,15 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<UserResponseDTO> findByUsername(String username){
-        Optional<UserEntity> user = userRepository.findUserEntityByUsername(username);
-        return user.map(UserResponseDTO::new);
+    public Optional<List<UserResponseDTO>> findByUsername(String username) {
+        List<UserEntity> users = userRepository.findUsersByUsername(username).orElse(new ArrayList<>());
+        if (users.isEmpty()) {
+            return Optional.empty();
+        } else {
+            return Optional.of(users.stream()
+                    .map(UserResponseDTO::new)
+                    .collect(Collectors.toList()));
+        }
     }
 
     @Transactional(readOnly = true)

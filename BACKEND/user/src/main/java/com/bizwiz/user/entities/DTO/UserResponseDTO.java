@@ -2,8 +2,13 @@ package com.bizwiz.user.entities.DTO;
 
 import com.bizwiz.user.entities.UserEntity;
 import com.bizwiz.user.entities.enums.Role;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class UserResponseDTO {
 
     private Long idUser;
@@ -17,6 +22,7 @@ public class UserResponseDTO {
 
     public UserResponseDTO(UserEntity user) {
         this.idUser=user.getIdUser();
+        this.username=user.getUsername();
         this.address= user.getAddress();
         this.email= user.getEmail();
         this.firstName= user.getFirstName();
