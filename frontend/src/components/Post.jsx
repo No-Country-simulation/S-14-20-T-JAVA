@@ -1,5 +1,6 @@
 import FollowBtn from "./FollowBtn";
 import IconComment from "./icons/IconComment";
+import IconFavorite from "./icons/IconFavorite";
 import IconLike from "./icons/IconLike";
 import UserIconFilled from "./icons/UserIconFilled";
 
@@ -23,9 +24,10 @@ const Post = ({id,image,user,title,body}) => {
       </header>
       <article key={id}>
         <img src={image} className="" alt="" />
-      <footer className="flex flex-row gap-2">
+      <footer className="flex flex-row gap-2 mt-2">
         <IconLike/>
         <IconComment/>
+        <IconFavorite/>
       </footer>
       <h6 className="font-semibold text-lg">
       {title.substring(0,8)}
