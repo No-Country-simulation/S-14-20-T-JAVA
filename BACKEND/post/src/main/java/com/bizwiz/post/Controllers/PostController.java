@@ -130,5 +130,17 @@ public class PostController {
             return ResponseEntity.internalServerError().body("Internal server error.");
         }
     }
+    @GetMapping("/all/all")
+    public ResponseEntity<?> getAllPostss() throws Personalized {
+
+        try {
+            return ResponseEntity.ok(postService.getAllPostss());
+        } catch (Personalized e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+
 
 }

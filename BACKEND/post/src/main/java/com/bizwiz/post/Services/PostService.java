@@ -259,5 +259,35 @@ public class PostService implements PostInterface {
             throw new Personalized("Error getting posts: " + e.getMessage());
         }
     }
+    
+    public ArrayList<PostDTO> getAllPostss() throws Personalized {
+
+        try {
+            // Create a list for posts that this method will return and also a list for
+            // images that a post could contain.
+            ArrayList<PostDTO> postsDTO = new ArrayList<>();
+            List<ImageDTO> images = new ArrayList<>();
+
+            // First iterator its for all the posts that a user has done,
+            // Verifications of post state is already done on the query in repository.
+            for (PostEntity post : postRepository.findAll()) {
+                // Second iterator its for all the images that a post could contain, and add it
+                // to the "images" list.
+                for (Image image : post.getImage()) {
+                    ImageDTO imageDTO = new ImageDTO(image.getMime(), image.getName(), image.getContent(),
+                            post.getId());
+                    images.add(imageDTO);
+                }
+                // Add the post and images to the "postsDTO" list, and then resets the "images"
+                // list to evade errors.
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId()));
+                images = new ArrayList<>();
+            }
+
+            return postsDTO;
+        } catch (Exception e) {
+            throw new Personalized("Error getting posts: " + e.getMessage());
+        }
+    }
 
 }
