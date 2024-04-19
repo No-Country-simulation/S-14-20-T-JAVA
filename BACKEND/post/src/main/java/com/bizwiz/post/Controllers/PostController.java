@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -102,10 +103,28 @@ public class PostController {
      * @throws Personalized
      */
     @GetMapping("/get")
-    public ResponseEntity<?> getPost(@RequestParam Long idPost) throws Personalized {
+    public ResponseEntity<?> getPostFromOneUser(@RequestParam Long idPost) throws Personalized {
 
         try {
             return ResponseEntity.ok(postService.getPost(idPost));
+        } catch (Personalized e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+
+    /**
+     * This API should find all active posts using the "title" parameter.
+     * @param title
+     * @return ResponseEntity
+     * @throws Personalized
+     */
+    @GetMapping("/get/posts/{title}")
+    public ResponseEntity<?> getPosts(@PathVariable String title) throws Personalized {
+
+        try {
+            return ResponseEntity.ok(postService.getPostsByTitle(title));
         } catch (Personalized e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
@@ -120,10 +139,10 @@ public class PostController {
      * @throws Personalized
      */
     @GetMapping("/all")
-    public ResponseEntity<?> getAllPosts(@RequestParam Long idUser) throws Personalized {
+    public ResponseEntity<?> getAllPostsFromOneUser(@RequestParam Long idUser) throws Personalized {
 
         try {
-            return ResponseEntity.ok(postService.getAllPosts(idUser));
+            return ResponseEntity.ok(postService.getAllPostsOfOneUser(idUser));
         } catch (Personalized e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {

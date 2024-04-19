@@ -18,5 +18,7 @@ public interface PostInterface {
 
     public PostDTO getPost(Long idPost) throws Personalized;
 
-    public ArrayList<PostDTO> getAllPosts(Long idUser) throws Personalized;
+    public ArrayList<PostDTO> getPostsByTitle(String title) throws Personalized;
+
+    public ArrayList<PostDTO> getAllPostsOfOneUser(Long idUser) throws Personalized;
 }

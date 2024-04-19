@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -223,6 +224,39 @@ public class PostService implements PostInterface {
     }
 
     /**
+     * Get all posts of a user searching it by title.
+     * 
+     * @param title
+     * @throws Personalized
+     * @return ArrayList<PostDTO>
+     */
+    @Override
+    public ArrayList<PostDTO> getPostsByTitle(String title) throws Personalized {
+
+        try {
+
+            // PageRequest is used to get only 10 posts, its like "LIMIT 10" on SQL.
+            PageRequest pageRequest = PageRequest.of(0, 10);
+            ArrayList<PostDTO> postsDTO = new ArrayList<>();
+            List<ImageDTO> images = new ArrayList<>();
+
+            for (PostEntity post : postRepository.findAllByTitle(title, pageRequest)) {
+                for (Image image : post.getImage()) {
+                    ImageDTO imageDTO = new ImageDTO(image.getMime(), image.getName(), image.getContent(),
+                            post.getId());
+                    images.add(imageDTO);
+                }
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId()));
+                images = new ArrayList<>();
+            }
+
+            return postsDTO;
+        } catch (Exception e) {
+            throw new Personalized("Error getting posts: " + e.getMessage());
+        }
+    }
+
+    /**
      * Get all posts of a user searching it by user id.
      * 
      * @param idUser
@@ -230,7 +264,7 @@ public class PostService implements PostInterface {
      * @return ArrayList<PostDTO>
      */
     @Override
-    public ArrayList<PostDTO> getAllPosts(Long idUser) throws Personalized {
+    public ArrayList<PostDTO> getAllPostsOfOneUser(Long idUser) throws Personalized {
 
         try {
             // Create a list for posts that this method will return and also a list for
