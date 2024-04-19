@@ -46,7 +46,7 @@ const Posts = () => {
 
   
   return (
-    <div className="">
+    <div className="m-2 mt-10">
       {
         postsWithData.map((photo) => (
           <Post 

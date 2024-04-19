@@ -7,7 +7,7 @@ import { GoogleIcon } from "@/components/icons/GoogleIcon";
 export default function Login() {
   return (
     <div
-      className="h-screen bg-white  pt-12 
+      className="h-screen bg-white pt-12 
     flex flex-col items-center gap-12 justify-between "
     >
       <section>

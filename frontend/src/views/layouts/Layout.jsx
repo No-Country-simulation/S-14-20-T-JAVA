@@ -26,7 +26,7 @@ const Layout = ({
         <Header/>
       )}
     
-      <main className="items-center flex-grow m-6">
+      <main className="items-center w-full flex-grow">
         {children}
       </main>
            
