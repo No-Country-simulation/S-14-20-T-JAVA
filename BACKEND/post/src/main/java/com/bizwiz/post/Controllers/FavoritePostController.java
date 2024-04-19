@@ -12,7 +12,7 @@ import com.bizwiz.post.Exceptions.Personalized;
 import com.bizwiz.post.Services.FavoritePostsService;
 
 @RestController
-@RequestMapping("/favorites")
+@RequestMapping("/posts/favorites")
 public class FavoritePostController {
 
     @Autowired
