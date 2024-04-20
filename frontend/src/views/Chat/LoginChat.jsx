@@ -6,6 +6,18 @@ const LoginChat = () => {
     nickname: '',
     fullname: ''
   })
+  
+  async function connectToChat() {
+    try {
+      const socket = await new SockJS('http://localhost:9003/ws');
+      let stompClient = await Stomp.over(socket);
+      await stompClient.connect({}, onConnected, onError);
+      setConnected(true);
+    } catch (err) {
+      console.error('Error connecting to socket:', err);
+    }
+  }
+  
 async function connect(form) {
   if (!form || !form.nickname || !form.fullname) {
     console.error('Form or nickname or fullname is missing.');
