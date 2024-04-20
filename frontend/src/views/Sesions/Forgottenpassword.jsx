@@ -1,48 +1,48 @@
-import React from "react";
-import LogoBIzWIz from "../../components/icons/LogoBIzWIz";
-import InputComponents from "../../components/InputComponents";
-import ButtonGeneric from "../../components/ButtonGeneric";
+import React from 'react';
+import LogoBIzWIz from '../../components/icons/LogoBIzWIz';
+import InputComponents from '../../components/InputComponents';
+import ButtonGeneric from '../../components/ButtonGeneric';
 const Forgottenpassword = () => {
-  return (
-    <div
-      className="h-screen bg-primary  pt-12 
- flex flex-col items-center gap-12  justify-between "
-    >
-      <section>
-        <LogoBIzWIz color="positive" />
-      </section>
-      <div
-         className="formulario bg-white py-12 px-4 h-full
-         flex items-center flex-col w-[101%] gap-4  rounded-tr-[20%]"
-      >
-        <section  className="formulario bg-white py-12 px-4 h-full
-         flex items-center flex-col w-[101%] gap-4  rounded-tr-[20%]">
-          <h6 className="font-black text-xl">¿Olvidaste tu contraseña?</h6>
+    return (
+        <div className="h-screen bg-primary pt-2 relative flex flex-col items-center gap-12 justify-between w-full">
 
-          <p className="text-[14px] opacity-75 p-3 text-center">
-            Verifica tu correo electrónico
-          </p>
+            <section>
+                <LogoBIzWIz color="positive" />
+            </section>
+            
+          
+                <section
+                    className="rounded-tr-[100px] bg-white py-12 px-4 h-full flex items-center flex-col w-[101%] animate-fade-in-delay absolute mt-[94px]">
+                    <div>
+                        <h6 className="font-black text-xl">
+                            ¿Olvidaste tu contraseña?
+                        </h6>
 
-          <InputComponents
-            type="email"
-            place={"Correo Electronico "}
-            inputName={"recoverPassword"}
-            id={"recoverPassword"}
-          />
+                        <p className="text-[14px] opacity-75 p-3 text-center">
+                            Verifica tu correo electrónico
+                        </p>
+                    </div>
 
-      
-          <ButtonGeneric
-            text={"Validar"}
-            bgColor={"bg-primary"}
-            ColorText={"text-white"}
-            Shadow={"shadow-lg"}
-            to={'/verificationcode'}
+                    <div className="flex flex-col gap-3 min-w-[350px]">
+                        <InputComponents
+                            type="email"
+                            place={'Correo Electronico '}
+                            inputName={'recoverPassword'}
+                            id={'recoverPassword'}
+                        />
 
-          />
-        </section>
-      </div>
-    </div>
-  );
+                        <ButtonGeneric
+                            text={'Validar'}
+                            bgColor={'bg-primary'}
+                            ColorText={'text-white'}
+                            Shadow={'shadow-lg'}
+                            to={'/verificationcode'}
+                        />
+                    </div>
+                </section>
+            
+        </div>
+    );
 };
 
 export default Forgottenpassword;

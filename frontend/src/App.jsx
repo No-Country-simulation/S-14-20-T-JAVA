@@ -11,9 +11,9 @@ import CreateUser from "@/views/Sesions/CreateUser";
 function App() {
   // Forzar viewport mobile en Layout, temporalmente mientras se desarrolla solo mobile
   // Usando dimensiones del iPhone 12 Pro (390 x 844 px)
-  const forceMobileStyles = "mx-auto max-w-[430px] max-h-[844px]";
+//   const forceMobileStyles = "mx-auto max-w-[430px] max-h-[844px]";
   return (
-    <Layout className={forceMobileStyles}>
+    <Layout>
       <Routes>
         <Route path="/createuser" element={<CreateUser />} />
         <Route
@@ -23,7 +23,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgottenpassword" element={<Forgottenpassword />} />
         <Route path="/verificationcode" element={<VerificationCode />} />
-        <Route path="/createpass" element={<CreatePassword/>} />
+        <Route path="/createpassword" element={<CreatePassword/>} />
+        <Route path="/createuser" element={<CreateUser/>} />
       </Routes>
       
     </Layout>
