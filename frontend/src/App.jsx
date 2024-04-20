@@ -8,7 +8,10 @@ import { Route, Routes } from "react-router-dom";
 import AnotherProfile from './views/Porfile/AnotherProfile'
 import Search from "@/views/SEarch/Search"
 import CreateUser from "@/views/Sesions/CreateUser";
-
+import SerEmprendedor from "./views/FormularioEmprendedor/serEmprendedor";
+import TuOcupacion from "./views/FormularioEmprendedor/tuOcupacion";
+import Ocupacion from "./views/FormularioEmprendedor/Ocupacion";
+import Enviado from "./views/FormularioEmprendedor/Enviado";
 
 function App() {
   // Forzar viewport mobile en Layout, temporalmente mientras se desarrolla solo mobile
@@ -22,15 +25,18 @@ function App() {
         <Route path="/" element={<SplashScreen delay={3000} destination="/login" />}/>
 
         
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/forgottenpassword" element={<Forgottenpassword />} />
         <Route path="/verificationcode" element={<VerificationCode />} />
         <Route path="/createpass" element={<CreatePassword/>} />
         <Route path="/search" element={<Search/>}/>
         // descomentar para ver la pantalla profile
         {/* <Route path="/login" element={<AnotherProfile  />} /> */}
+        <Route path="/login" element={<SerEmprendedor/>} />
+        <Route path="/tuocupacion" element={<TuOcupacion/>} />
+        <Route path="/ocupacion" element={<Ocupacion/>} />
+        <Route path="/enviado" element={<Enviado/>} />
 
-      
 
       </Routes>
       
