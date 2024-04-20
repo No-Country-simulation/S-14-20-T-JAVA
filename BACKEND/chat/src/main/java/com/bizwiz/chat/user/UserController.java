@@ -17,8 +17,8 @@ import java.util.List;
 public class UserController {
     private final UserService service;
 
-    @MessageMapping("/user.addUser")
-    @SendTo("/user/topic")
+    @MessageMapping("/userchat.addUser")
+    @SendTo("/userchat/topic")
     public UserChat addUser(
             @Payload String nickName) {
         try {
@@ -31,8 +31,8 @@ public class UserController {
         }
     }
 
-    @MessageMapping("/user.disconnectUser")
-    @SendTo("/user/topic")
+    @MessageMapping("/userchat.disconnectUser")
+    @SendTo("/userchat/topic")
     public UserChat disconnect(
             @Payload String nickName
     ) {
@@ -46,7 +46,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/users")
+    @GetMapping("/userschat")
     public ResponseEntity<List<UserChat>> findConnectedUsers() {
         try {
             List<UserChat> connectedUsers = service.findConnectUsers();

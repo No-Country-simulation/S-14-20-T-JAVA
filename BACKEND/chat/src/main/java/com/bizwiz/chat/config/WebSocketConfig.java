@@ -19,17 +19,15 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/user");
+        registry.enableSimpleBroker("/userchat");
         registry.setApplicationDestinationPrefixes("/app");
-        registry.setUserDestinationPrefix("/user");
+        registry.setUserDestinationPrefix("/userchat/{userId}/**");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws").withSockJS();
-
+        registry.addEndpoint("/ws").setAllowedOrigins("http://localhost:4200").withSockJS();
     }
-
     @Override
     public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
         DefaultContentTypeResolver resolver = new DefaultContentTypeResolver();
