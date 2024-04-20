@@ -1,9 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 
-export const GeneralButton = ({ name, to }) => {
+export const GeneralButton = ({ name, to, type }) => {
     const location = useLocation();
     const currentPath = location.pathname;
-    console.log(currentPath);
 
     let buttonClass = '';
 
@@ -20,8 +19,8 @@ export const GeneralButton = ({ name, to }) => {
     }
 }
     return (
-        <Link className={buttonClass} to={to}>
+        <button className={buttonClass} to={to} type={type}>
             {name}
-        </Link>
+        </button>
     );
 };

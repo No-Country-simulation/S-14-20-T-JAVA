@@ -4,11 +4,19 @@ import InputComponents from '@components/InputComponents';
 import { Link } from 'react-router-dom';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 import { GeneralButton } from '../components/GeneralButton';
-export default function Login() {
-    return (
-        <div
-            className="h-screen bg-white pt-2 relative flex flex-col items-center gap-12 justify-between w-full">
+import { useForm } from '../hooks/useForm';
 
+export default function Login() {
+
+    const { email, password, onInputChange } = useForm({ email: '', password: '' });
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('email and pass ' + email, password);
+    };
+
+    return (
+        <div className="h-screen bg-white pt-2 relative flex flex-col items-center gap-12 justify-between w-full">
             <section>
                 <LogoBIzWIz color="" />
             </section>
@@ -18,7 +26,6 @@ export default function Login() {
       flex items-center flex-col w-[101%] animate-fade-in-delay absolute mt-[94px]"
             >
                 <div className="  mx-auto  flex flex-col">
-
                     <section className="mb-4 text-white text-center">
                         <h6 className="font-semibold text-xl ">
                             Iniciar sesión
@@ -29,19 +36,38 @@ export default function Login() {
                     </section>
 
                     <form
-                        className="flex flex-col gap-3 w-full  text-[#717171]  "
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-3 w-full  "
                         action=""
                         method=""
                     >
                         <InputComponents
-                            place="Correo Electronico"
-                            type="email"
-                        />
-                        <InputComponents place="Contraseña" type="password" />
+                    placeholder="Correo Electronico"
+                    type="email"
+                    name='email'
+                    id='email'
+                    isRequired={true}
+                    value={email} // Pasa el valor del email al componente InputComponents
+                    onInputChange={onInputChange} // Pasa la función onInputChange del hook useForm
+                />
+
+                <InputComponents
+                    placeholder="Contraseña"
+                    type="password"
+                    id="password"
+                    name="password"
+                    isRequired={true}
+                    value={password} // Pasa el valor de password al componente InputComponents
+                    onInputChange={onInputChange} // Pasa la función onInputChange del hook useForm
+                />
 
                         <div className="flex justify-end mt-4 min-w-[350px] ">
-                        <GeneralButton name={'Iniciar Sesion'} to={'/login'} />
-                    </div>
+                            <GeneralButton
+                                type="submit"
+                                name="Iniciar Sesion"
+                                to="/login"
+                            />
+                        </div>
                     </form>
 
                     <div className="mt-6 flex space-around">
