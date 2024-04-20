@@ -11,8 +11,8 @@ const Layout = ({
   children 
 }) => {
   const location = useLocation();
-  const hiddenNavPaths = ["/", "/login", "/createuser"];
-  const hiddenHeaderPaths = ["/", "/login","/createuser"];
+  const hiddenNavPaths =     ["/","/login","/createuser","/forgottenpassword","/verificationcode","/createpass"];
+  const hiddenHeaderPaths =  ["/","/login","/createuser","/forgottenpassword","/verificationcode","/createpass"];
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
   console.log(isNavHidden)
