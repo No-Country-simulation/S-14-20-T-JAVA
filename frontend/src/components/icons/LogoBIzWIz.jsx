@@ -60,10 +60,8 @@ export default function LogoBIzWIz({color}) {
         <stop offset="1" stop-color="#65006F"/>
         </linearGradient>
         </defs>
-        </svg>
-        
+        </svg> 
       )
-      
     }
     </div>
     

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export const classCreate = "flex items-center justify-center bg-[#F5F5F5] rounded-full w-[116px] font-black shadow-[4px_0_4px_0_rgba(0,0,0,0.25)] " 
+export const classCreate = "flex items-center justify-center bg-background rounded-full w-[116px] font-black shadow-[4px_0_4px_0_rgba(0,0,0,0.25)] " 
 export default function Buttondynamic({ name, name2, to, to2 }) {
   const location = useLocation();
   const currentPath = location.pathname;
