@@ -13,5 +13,3 @@ export default function InputComponents({ placeholder, type, name, id, isRequire
         />
     );
 }
-
-
