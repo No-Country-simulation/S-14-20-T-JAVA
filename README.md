@@ -35,7 +35,8 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
 **Esperamos que esta aplicación sea una herramienta útil para todas las personas que buscan emprender en su negocio y busquen crecer junto a otros emprendedores.**
 
 ## Tecnologías
- -[Backend]
+
+- [Backend]
   - Java 17 (SpringBoot) | Arquitectura: MVC | Enfoque de trabajo: TDD
   - Micro servicios | Comunicación: HTTP/REST | Herramienta de comunicación: Feign
   - Base de datos relacional: MySQL
