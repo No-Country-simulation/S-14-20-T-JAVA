@@ -13,7 +13,7 @@ export const GeneralButton = ({ name, to, type }) => {
          }  else if (to === '/createuser' || (to === '/verificationcode') || (to === '/createpassword')) {
             buttonClass =
                 'flex items-center justify-center bg-primary  hover:bg-primaryPressed  rounded-full min-w-[211px] min-h-[50px]  font-semibold shadow-[-5px_1px_4px_0px_#00000038] text-loginButton md:text-button-font-size ';
-        } else if (to === '/lostPass' || to === '/create-password') {
+        } else if (to === '/forgottenpassword' || to === '/create-password') {
             buttonClass =
                 'flex items-center justify-center bg-primary  hover:bg-primaryPressed rounded-full w-full  h-[39px]  font-semibold shadow-[-5px_1px_4px_0px_#00000038] text-loginButton md:text-button-font-size ';
     }
