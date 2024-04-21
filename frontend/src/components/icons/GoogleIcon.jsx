@@ -1,7 +1,7 @@
 
 export const GoogleIcon = () => {
   return (
-    <div>
+    <div className='flex justify-center'>
        <svg width="62" height="64" viewBox="0 0 62 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_dd_127_1328)">
 <rect x="3" y="3" width="56" height="56" rx="28" fill="white"/>

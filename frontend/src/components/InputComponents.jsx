@@ -1,11 +1,15 @@
 
-export default function InputComponents({place, type, inputName, id,Styles,autoFocus, handleChange,value}) {
-  
-
-  return (
-
-    <input className={`border-solid border-[#717171] border-[1px] p-3 h-[40px]  w-full rounded-full ${Styles}`}
-     placeholder={place} type={type} name={inputName} id={id} autoFocus={autoFocus} onChange={handleChange} value={value} />
-    
-  );
+export default function InputComponents({ placeholder, type, name, id, isRequired, value, onInputChange }) {
+    return (
+        <input
+            className="border-solid border-loginButtonPressed border-[1px] p-3 w-full h-{100%} rounded-full h-[50px] min-w-[350px] focus:outline-none focus:border-disabled focus:ring-1 focus:ring-disabled "
+            type={type}
+            placeholder={placeholder}
+            name={name}
+            id={id}
+            value={value}
+            onChange={onInputChange}
+            required={isRequired}
+        />
+    );
 }
