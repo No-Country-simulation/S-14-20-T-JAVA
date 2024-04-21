@@ -64,3 +64,4 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
   - Magnavachi Pablo
   - Alexandro Moroz 
   - Santiago Paguaga
+  - Elián Bargaz
