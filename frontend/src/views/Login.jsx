@@ -1,7 +1,7 @@
 import LogoBIzWIz from '@components/icons/LogoBIzWIz';
 import Buttondynamic from '@components/Buttondynamic';
 import InputComponents from '@components/InputComponents';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 import { GeneralButton } from '../components/GeneralButton';
 import { useForm } from '../hooks/useForm';
@@ -9,10 +9,14 @@ import { useForm } from '../hooks/useForm';
 export default function Login() {
 
     const { email, password, onInputChange } = useForm({ email: '', password: '' });
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('email and pass ' + email, password);
+
+        //ESTO DEBE EJECUTARSE SI LA VALIDACION DEL USUARIO Y CONTRASEÑA DIO 0K CON EL BACK
+        navigate('/home');
     };
 
     return (
@@ -34,7 +38,7 @@ export default function Login() {
                             Inicia en tu cuenta en BizWiz
                         </p>
                     </section>
-
+ 
                     <form
                         onSubmit={handleSubmit}
                         className="flex flex-col gap-3 w-full  "

@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 
+
 import NavBar from "@components/NavBar";
+import { Header } from "@components/Header";
 
 
 
@@ -9,8 +11,8 @@ const Layout = ({
   children 
 }) => {
   const location = useLocation();
-  const hiddenNavPaths = ["/", "/intro"];
-  const hiddenHeaderPaths = ["/", "/intro"];
+  const hiddenNavPaths =     ["/","/login","/createuser","/forgottenpassword","/verificationcode","/createpass"];
+  const hiddenHeaderPaths =  ["/","/login","/createuser","/forgottenpassword","/verificationcode","/createpass"];
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
 
@@ -20,20 +22,22 @@ const Layout = ({
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
 
   return (
-    <div className={ className}> 
+    <div className={ className }> 
       
-
-      <main className="items-center">
+    
+      {isHeaderHidden ? null : (
+        <Header/>
+      )}
+    
+      <main className="items-center w-full flex-grow">
         {children}
       </main>
-      {/*
-//!ESTO ESTÁ DESACTIVADO POR AHORA 
-       Hide the footer on the intro and landing pages
+           
       {isNavHidden ? null : (
         <footer>
           <NavBar />
         </footer>
-      )} */}
+      )}
     </div>
   );
 }

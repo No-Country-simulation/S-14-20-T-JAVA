@@ -1,31 +1,23 @@
 import { NavLink, useLocation } from "react-router-dom";
-import IconSearch from "@components/icons/IconSearch";
+import IconUser from "@components/icons/IconUser";
 import IconHome from "@components/icons/IconHome";
-
+import IconMessage from '@components/icons/IconMessage'
 
 export default function NavBar() {
   
    /* tomar los params de la ruta actual (location) */
    const location = useLocation();
-   /* tomar el modo ("vendedor" | "comprador") del primer param de location después de "/" */
-   const modo = location.pathname.split("/")[1];
- 
-  
- 
-  
+  const activeClass="text-primary"
     return (
-    <nav className="">
-      <NavLink to={`${modo}/home`} 
-      //</nav> className={navLinkClasses}
-      >
-        <IconHome />
-        <span className="sr-only btm-nav-label">Home</span>
+    <nav className="fixed bottom-0 left-0 right-0 flex flex-row justify-around p-8  bg-background">
+      <NavLink to="/home" activeStyle={activeClass}>
+        <IconHome  />
       </NavLink>
-      <NavLink to={`${modo}/search`} 
-      //</nav>className={navLinkClasses}
-      >
-        <IconSearch />
-        <span className="sr-only btm-nav-label">Buscar</span>
+      <NavLink to="/chat" activeStyle={activeClass}>
+        <IconMessage />
+      </NavLink>
+      <NavLink to="/profile" activeStyle={activeClass}>
+       <IconUser />
       </NavLink>
     </nav>
   

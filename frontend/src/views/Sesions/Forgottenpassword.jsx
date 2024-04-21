@@ -1,4 +1,3 @@
-import React from 'react';
 import LogoBIzWIz from '../../components/icons/LogoBIzWIz';
 import InputComponents from '../../components/InputComponents';
 import ButtonGeneric from '../../components/ButtonGeneric';
