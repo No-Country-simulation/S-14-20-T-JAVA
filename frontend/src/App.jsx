@@ -8,6 +8,8 @@ import { Route, Routes } from "react-router-dom";
 import AnotherProfile from './views/Porfile/AnotherProfile'
 import Search from "@/views/SEarch/Search"
 import CreateUser from "@/views/Sesions/CreateUser";
+import Reports from "./views/Reporte/Reports";
+import Report from "./views/Reporte/Report";
 
 
 function App() {
@@ -27,7 +29,10 @@ function App() {
         <Route path="/verificationcode" element={<VerificationCode />} />
         <Route path="/createpass" element={<CreatePassword/>} />
         <Route path="/search" element={<Search/>}/>
-        // descomentar para ver la pantalla profile
+
+        <Route path="/reports" element={<Reports/>}/>
+        <Route path="reports/report" element={<Report/>}/>
+        
         {/* <Route path="/login" element={<AnotherProfile  />} /> */}
 
       
