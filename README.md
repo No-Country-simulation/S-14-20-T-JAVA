@@ -1,4 +1,4 @@
-# NoCountry S-14-T-JAVA-REACT
+# NoCountry S-14--20-T-JAVA-REACT
 Aplicación del seleccionado 14 de No Country, Grupo 20 (Java/React)
 
 <h1>Red social "BizWiz"</h1>
