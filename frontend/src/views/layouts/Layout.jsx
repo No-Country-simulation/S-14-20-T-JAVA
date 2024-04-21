@@ -15,7 +15,10 @@ const Layout = ({
   const hiddenHeaderPaths =  ["/","/login","/createuser","/forgottenpassword","/verificationcode","/createpass"];
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
-  console.log(isNavHidden)
+
+//   Se deja comentado el console,log() que viene desde otra rama
+  //   console.log(isNavHidden)
+
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
 
   return (
