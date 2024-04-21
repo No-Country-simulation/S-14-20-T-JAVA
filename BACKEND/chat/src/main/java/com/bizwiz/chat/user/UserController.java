@@ -1,7 +1,9 @@
 package com.bizwiz.chat.user;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -18,23 +20,47 @@ public class UserController {
     @MessageMapping("/user.addUser")
     @SendTo("/user/topic")
     public UserChat addUser(
-            @Payload UserChat user){
-        service.saveUser(user);
-        return user;
+            @Payload UserChat user) {
+        try {
+            service.saveUser(user);
+            return user;
+        } catch (Exception e) {
+            // Manejar la excepción y mostrarla en la consola
+            e.printStackTrace();
+            return null; // O devuelve un valor que indique un error
+        }
     }
 
     @MessageMapping("/user.disconnectUser")
     @SendTo("/user/topic")
     public UserChat disconnect(
             @Payload UserChat user
-    ){
-        service.disconnect(user);
-        return user;
+    ) {
+        try {
+            service.disconnect(user);
+            return user;
+        } catch (Exception e) {
+            // Manejar la excepción y mostrarla en la consola
+            e.printStackTrace();
+            return null; // O devuelve un valor que indique un error
+        }
     }
 
     @GetMapping("/users")
-    public ResponseEntity<List<UserChat>> findConnectedUsers(){
-        return ResponseEntity.ok(service.findConnectUsers());
+    public ResponseEntity<List<UserChat>> findConnectedUsers() {
+        try {
+            List<UserChat> connectedUsers = service.findConnectUsers();
+            return ResponseEntity.ok(connectedUsers);
+        } catch (Exception e) {
+            // Manejar la excepción y mostrarla en la consola
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 
+    @MessageExceptionHandler(Exception.class)
+    public void handleException(Exception e) {
+        // Manejar la excepción aquí y mostrarla en la consola
+        e.printStackTrace();
+    }
 }
