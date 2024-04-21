@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useForm = (initialState = { email: '', password: '' }) => {
+export const useForm = (initialState = { firstlastname:'', email: '', password: '' }) => {
     const [formState, setFormState] = useState(initialState);
 
     const onInputChange = ({ target }) => {
@@ -9,6 +9,7 @@ export const useForm = (initialState = { email: '', password: '' }) => {
             ...formState,
             [name]: value,
         });
+        console.log(name, value)
     };
 
     return {

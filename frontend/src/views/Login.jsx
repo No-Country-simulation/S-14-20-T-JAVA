@@ -51,8 +51,8 @@ export default function Login() {
                     name='email'
                     id='email'
                     isRequired={true}
-                    value={email} // Pasa el valor del email al componente InputComponents
-                    onInputChange={onInputChange} // Pasa la función onInputChange del hook useForm
+                    value={email} 
+                    onInputChange={onInputChange}
                 />
 
                 <InputComponents
@@ -61,8 +61,8 @@ export default function Login() {
                     id="password"
                     name="password"
                     isRequired={true}
-                    value={password} // Pasa el valor de password al componente InputComponents
-                    onInputChange={onInputChange} // Pasa la función onInputChange del hook useForm
+                    value={password}
+                    onInputChange={onInputChange} 
                 />
 
                         <div className="flex justify-end mt-4 min-w-[350px] ">
