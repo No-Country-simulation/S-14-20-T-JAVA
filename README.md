@@ -66,3 +66,4 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
   - Alexandro Moroz 
   - Santiago Paguaga
   - Elián Bargaz
+  - Rodrigo Georgetti
