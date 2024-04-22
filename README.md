@@ -57,7 +57,7 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
 - UX/UI
   - Micaela Delgado
 - Frontend
-  - Yhordi Espinosa
+  - Yhordi Choque Espinoza
   - Fernando Juan Batres
   - Mariano Juarez 
   - Verónica Campero
