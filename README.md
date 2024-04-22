@@ -59,7 +59,8 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
 - Frontend
   - Yhordi Espinosa
   - Fernando Juan Batres
-  - Mariano Juarez Magariños
+  - Mariano Juarez 
+  - Verónica Campero
 - Backend
   - Magnavachi Pablo
   - Alexandro Moroz 
