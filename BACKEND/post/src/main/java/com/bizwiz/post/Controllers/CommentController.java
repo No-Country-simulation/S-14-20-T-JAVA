@@ -18,39 +18,52 @@ public class CommentController {
     private CommentService commentService;
 
     @PostMapping("/create")
-    public ResponseEntity<?> createComment(MultipartHttpServletRequest request) throws Personalized{
-        // try {
-        //     CommentDTO commentDTO = commentService.createComment(idPost, idUser, content);
-        //     return ResponseEntity.ok(commentDTO);
-        // } catch (Personalized e) {
-        //     return ResponseEntity.badRequest().body(e.getMessage());
-        // } catch (Exception e) {
-        //     return ResponseEntity.internalServerError().body("Internal server error.");
-        // }
+    public ResponseEntity<?> createComment(MultipartHttpServletRequest request) throws Personalized {
+
         try {
-            // Get the data from the request variable and set it on the corresponding variables
-            // then create the postDTO calling the service "createPost" and return it.
+
             String content = request.getParameter("content");
             Long idPost = Long.parseLong(request.getParameter("idPost"));
             Long idUser = Long.parseLong(request.getParameter("idUser"));
 
-        CommentDTO commentDTO = commentService.createComment(idUser, idPost, content);
+            CommentDTO commentDTO = commentService.createComment(idUser, idPost, content);
             return ResponseEntity.ok(commentDTO);
         } catch (Personalized e) {
-            // Catches the personalized exception message and returns it.
+
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
-            // Catches the Exception message and returns it.
+
             return ResponseEntity.internalServerError().body("Internal server error.");
         }
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateComment(@PathVariable("id") Long id,
-                                           @RequestParam String content) {
+    @PutMapping("/update")
+    public ResponseEntity<?> updateComment(@RequestParam Long idComment,
+    String content) throws Personalized {
         try {
-            CommentDTO commentDTO = commentService.updateComment(id, content);
-            return ResponseEntity.ok(commentDTO);
+            return ResponseEntity.ok(commentService.updateComment(idComment, content));
+        } catch (Personalized e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+    
+    @PutMapping("/delete")
+    public ResponseEntity<?> deleteComment(@RequestParam Long idComment) throws Personalized {
+        try {
+            return ResponseEntity.ok(commentService.deleteComment(idComment));
+        } catch (Personalized e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+    
+    @GetMapping("/get")
+    public ResponseEntity<?> getComment(@RequestParam Long idComment) throws Personalized {
+        try {
+            return ResponseEntity.ok(commentService.getComment(idComment));
         } catch (Personalized e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
@@ -58,38 +71,15 @@ public class CommentController {
         }
     }
 
-    @PutMapping("/delete/{id}")
-    public ResponseEntity<?> deleteComment(@PathVariable("id") Long id) {
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllCommentsByPostId(@RequestParam Long idPost) throws Personalized {
+
         try {
-            String message = commentService.deleteComment(id);
-            return ResponseEntity.ok(message);
+            return ResponseEntity.ok(commentService.getAllCommentsByPostId(idPost));
         } catch (Personalized e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body("Internal server error.");
         }
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getComment(@PathVariable("id") Long id) {
-        try {
-            CommentDTO commentDTO = commentService.getComment(id);
-            return ResponseEntity.ok(commentDTO);
-        } catch (Personalized e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("Internal server error.");
-        }
-    }
-
-    // @GetMapping("/post/{postId}")
-    // public ResponseEntity<?> getAllCommentsForPost(@PathVariable("postId") Long postId) {
-    //     try {
-    //         return ResponseEntity.ok(commentService.getAllCommentsForPost(postId));
-    //     } catch (Personalized e) {
-    //         return ResponseEntity.badRequest().body(e.getMessage());
-    //     } catch (Exception e) {
-    //         return ResponseEntity.internalServerError().body("Internal server error.");
-    //     }
-    // }
 }

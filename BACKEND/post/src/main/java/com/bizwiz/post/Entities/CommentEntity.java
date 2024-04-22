@@ -34,9 +34,6 @@ public class CommentEntity {
     @JoinColumn(name = "post_id")
     private PostEntity post;
 
-    @Column(name = "post_id", insertable = false, updatable = false)
-    private Long idPost;
-
     @Nullable
     @Column(name = "id_user")
     private Long idUser;
@@ -47,10 +44,5 @@ public class CommentEntity {
 
     @Enumerated(EnumType.STRING)
     private State state;
-
-    // Getter and Setter for postId
-    public Long getPostId() {
-    return post != null ? post.getId() : null;
-    }
 
 }

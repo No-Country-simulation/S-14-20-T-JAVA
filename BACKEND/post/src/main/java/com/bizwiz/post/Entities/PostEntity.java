@@ -46,9 +46,9 @@ public class PostEntity {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Image> image = new ArrayList<>();
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CommentEntity> comments = new ArrayList<>();
-
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<CommentEntity> comments;
+    
     @Nullable
     private LocalDate date;
 
