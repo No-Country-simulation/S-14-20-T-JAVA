@@ -11,7 +11,7 @@ import com.bizwiz.post.Exceptions.Personalized;
 import com.bizwiz.post.Services.CommentService;
 
 @Controller
-@RequestMapping("/comments")
+@RequestMapping("/posts/comments")
 public class CommentController {
 
     @Autowired
