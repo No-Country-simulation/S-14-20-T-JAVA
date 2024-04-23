@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import LogoBIzWIz from "../../components/icons/LogoBIzWIz";
 import InputComponents from "../../components/InputComponents";
 import ButtonGeneric from "../../components/ButtonGeneric";
-import { GeneralButton } from "../../components/GeneralButton";
 import SelectInput from "../../components/Selected"; // Importa el componente SelectInput
 
 const Ocupacion = () => {
