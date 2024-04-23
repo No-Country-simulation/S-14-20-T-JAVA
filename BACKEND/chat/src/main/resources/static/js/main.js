@@ -32,12 +32,9 @@ function connect(event) {
 function onConnected() {
     stompClient.subscribe(`/userchat/${nickname}/queue/messages`, onMessageReceived);
     stompClient.subscribe(`/userchat/public`, onMessageReceived);
+    console.log(nickname);
 
-    // register the connected user
-    stompClient.send("/app/userchat.addUser",
-        {},
-        nickName
-    );
+    stompClient.send("/app/userchat.addUser", {}, JSON.stringify(nickname));
     document.querySelector('#connected-user-nickname').textContent = nickname;
     findAndDisplayConnectedUsers().then();
 }
@@ -178,7 +175,7 @@ async function onMessageReceived(payload) {
 function onLogout() {
     stompClient.send("/app/userchat.disconnectUser",
         {},
-        nickName
+         JSON.stringify(nickname)
     );
     window.location.reload();
 }

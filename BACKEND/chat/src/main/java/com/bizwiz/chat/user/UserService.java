@@ -13,8 +13,8 @@ public class UserService {
 
     public UserChat saveUser(String nickName){
         UserChat user = repository.findById(nickName).orElse(null);
-        if(user == null){
-            UserChat.builder()
+        if(user == null) {
+           user = UserChat.builder()
                     .nickName(nickName)
                     .status(Status.ONLINE)
                     .build();
