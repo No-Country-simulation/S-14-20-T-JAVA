@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/S-14-20-T-JAVA.iml" filepath="$PROJECT_DIR$/.idea/S-14-20-T-JAVA.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/BACKEND/chat/chat.iml" filepath="$PROJECT_DIR$/BACKEND/chat/chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BACKEND/eureka/eureka.iml" filepath="$PROJECT_DIR$/BACKEND/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BACKEND/gateway/gateway.iml" filepath="$PROJECT_DIR$/BACKEND/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BACKEND/post/post.iml" filepath="$PROJECT_DIR$/BACKEND/post/post.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BACKEND/user/user.iml" filepath="$PROJECT_DIR$/BACKEND/user/user.iml" />
+>>>>>>> bf932032fb9f7ab5d874335afad476148faf4570
     </modules>
   </component>
 </project>

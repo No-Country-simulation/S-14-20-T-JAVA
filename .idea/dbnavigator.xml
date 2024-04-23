@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
+  </component>
+>>>>>>> bf932032fb9f7ab5d874335afad476148faf4570
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
@@ -136,6 +145,10 @@
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
           <content-type name="Groovy" enabled="true" />
+<<<<<<< HEAD
+=======
+          <content-type name="AIDL" enabled="true" />
+>>>>>>> bf932032fb9f7ab5d874335afad476148faf4570
           <content-type name="YAML" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
@@ -353,6 +366,12 @@
         <compile-dependencies value="ASK" />
         <always-show-controls value="false" />
       </compiler>
+<<<<<<< HEAD
+=======
+      <debugger>
+        <debugger-type value="ASK" />
+      </debugger>
+>>>>>>> bf932032fb9f7ab5d874335afad476148faf4570
     </operation-settings>
     <ddl-file-settings>
       <extensions>
