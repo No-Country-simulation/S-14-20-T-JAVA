@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-
+import '/src/Layout.css'
 
 import NavBar from "@components/NavBar";
 import { Header } from "@components/Header";
@@ -22,20 +22,22 @@ const Layout = ({
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
 
   return (
-    <div className={ className }> 
+    <div className={ className } id="app"
+     > 
       
     
       {isHeaderHidden ? null : (
-        <Header/>
+        <Header Styles={'[grid-area:header] relative header '}  />
       )}
     
-      <main className="items-center w-full flex-grow">
+      <main className=" flex items-center w-full flex-grow  [grid-area:main] main bg-gray-50 
+       max-lg:justify-center max-lg:overflow-y-auto lg:my-10">
         {children}
       </main>
            
       {isNavHidden ? null : (
-        <footer>
-          <NavBar />
+        <footer className="[grid-area:footer]  ">
+          <NavBar styles={"relative footer"}/>
         </footer>
       )}
     </div>

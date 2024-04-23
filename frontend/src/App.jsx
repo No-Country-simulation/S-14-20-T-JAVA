@@ -43,7 +43,11 @@ function App() {
                 <Route path="/reports" element={<Reports/>}/>
                  <Route path="reports/report" element={<Report/>}/>
             </Routes>
+
+            
         </Layout>
+
+        
     );
 }
 
