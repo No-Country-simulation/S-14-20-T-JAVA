@@ -2,6 +2,7 @@ package com.bizwiz.post.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -80,7 +81,7 @@ public class FavoritePostController {
      * @return
      * @throws Personalized
      */
-    @PutMapping("/delete/all")
+    @DeleteMapping("/delete/all")
     public ResponseEntity<?> deleteAllFavoritePostsFromOneUser(Long idUser) throws Personalized {
 
         try {
