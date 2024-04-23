@@ -49,7 +49,7 @@ public class CommentController {
         }
     }
     
-    @PutMapping("/delete")
+    @DeleteMapping("/delete")
     public ResponseEntity<?> deleteComment(@RequestParam Long idComment) throws Personalized {
         try {
             return ResponseEntity.ok(commentService.deleteComment(idComment));
