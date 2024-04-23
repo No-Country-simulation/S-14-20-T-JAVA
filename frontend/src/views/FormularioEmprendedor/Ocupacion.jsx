@@ -14,9 +14,10 @@ const Ocupacion = () => {
 
   const options = [ 
   
-    { value: 'opcion1', label: 'Opción 1' },
-    { value: 'opcion2', label: 'Opción 2' },
-    { value: 'opcion3', label: 'Opción 3' },
+    { value: 'opcion1', label: 'Vehículos' },
+    { value: 'opcion2', label: 'Accesorios' },
+    { value: 'opcion3', label: 'Muebles' },
+    { value: 'opcion3', label: 'Arte y mensualidades' },
   ];
 
   return (
