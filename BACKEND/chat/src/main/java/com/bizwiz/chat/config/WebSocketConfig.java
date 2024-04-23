@@ -21,12 +21,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/userchat");
         registry.setApplicationDestinationPrefixes("/app");
-        registry.setUserDestinationPrefix("/userchat/{userId}/**");
+        registry.setUserDestinationPrefix("/userchat");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/ws")
+                .setAllowedOrigins("http://172.21.128.1:5173", "http://192.168.0.130:5173")
+                .withSockJS();
     }
     @Override
     public boolean configureMessageConverters(List<MessageConverter> messageConverters) {

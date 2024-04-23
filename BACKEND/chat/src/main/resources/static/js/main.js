@@ -11,14 +11,12 @@ const logout = document.querySelector('#logout');
 
 let stompClient = null;
 let nickname = null;
-let fullname = null;
 let selectedUserId = null;
 
 function connect(event) {
     nickname = document.querySelector('#nickname').value.trim();
-    fullname = document.querySelector('#fullname').value.trim();
 
-    if (nickname && fullname) {
+    if (nickname) {
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
 
@@ -32,20 +30,21 @@ function connect(event) {
 
 
 function onConnected() {
-    stompClient.subscribe(`/user/${nickname}/queue/messages`, onMessageReceived);
-    stompClient.subscribe(`/user/public`, onMessageReceived);
+    stompClient.subscribe(`/userchat/${nickname}/queue/messages`, onMessageReceived);
+    stompClient.subscribe(`/userchat/public`, onMessageReceived);
 
     // register the connected user
-    stompClient.send("/app/user.addUser",
+    stompClient.send("/app/userchat.addUser",
         {},
-        JSON.stringify({nickName: nickname, fullName: fullname, status: 'ONLINE'})
+        nickName
     );
-    document.querySelector('#connected-user-fullname').textContent = fullname;
+    document.querySelector('#connected-user-nickname').textContent = nickname;
     findAndDisplayConnectedUsers().then();
 }
 
 async function findAndDisplayConnectedUsers() {
-    const connectedUsersResponse = await fetch('/users');
+    const connectedUsersResponse = await fetch('/userschat');
+    console.log(connectedUsersResponse);
     let connectedUsers = await connectedUsersResponse.json();
     connectedUsers = connectedUsers.filter(user => user.nickName !== nickname);
     const connectedUsersList = document.getElementById('connectedUsers');
@@ -68,10 +67,10 @@ function appendUserElement(user, connectedUsersList) {
 
     const userImage = document.createElement('img');
     userImage.src = '../img/user_icon.png';
-    userImage.alt = user.fullName;
+    userImage.alt = user.nickName;
 
     const usernameSpan = document.createElement('span');
-    usernameSpan.textContent = user.fullName;
+    usernameSpan.textContent = user.nickName;
 
     const receivedMsgs = document.createElement('span');
     receivedMsgs.textContent = '0';
@@ -177,9 +176,9 @@ async function onMessageReceived(payload) {
 }
 
 function onLogout() {
-    stompClient.send("/app/user.disconnectUser",
+    stompClient.send("/app/userchat.disconnectUser",
         {},
-        JSON.stringify({nickName: nickname, fullName: fullname, status: 'OFFLINE'})
+        nickName
     );
     window.location.reload();
 }
