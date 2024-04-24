@@ -6,8 +6,8 @@ import fetchPhotos from "./resources/pexels"
 const Posts = () => {
   const [photos, setPhotos] = useState([]);
   const [jsonPlace,setJsonPlace] =useState([])
-  console.log(jsonPlace)
-  console.log(photos)
+//   console.log(jsonPlace)
+//   console.log(photos)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,7 +42,7 @@ const Posts = () => {
     title: jsonPlace[index] ? jsonPlace[index].title : "", // Si hay un elemento en jsonPlace, asigna su título, de lo contrario cadena vacía
     body: jsonPlace[index] ? jsonPlace[index].body : ""     // Si hay un elemento en jsonPlace, asigna su cuerpo, de lo contrario cadena vacía
   }));
-  console.log(postsWithData)
+//   console.log(postsWithData)
 
   
   return (

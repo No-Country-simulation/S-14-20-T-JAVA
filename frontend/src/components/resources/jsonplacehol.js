@@ -11,7 +11,7 @@ const jsonData = async () => {
       throw new Error('Failed to fetch data from JsonPlace');
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error('Error fetching data from JsonPlace:', error);
