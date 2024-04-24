@@ -30,7 +30,7 @@ function VerificationCode() {
                     <InputComponents
                         type="password"
                         place={'Código'}
-                        inputName={'code'}
+                        inputName={'code' }
                         id={'code'}
                     />
 
