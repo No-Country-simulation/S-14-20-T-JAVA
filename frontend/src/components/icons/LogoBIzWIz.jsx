@@ -156,8 +156,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="52.8993"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint1_linear_127_1240"
@@ -167,8 +167,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="64.6651"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint2_linear_127_1240"
@@ -178,8 +178,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="56.9019"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint3_linear_127_1240"
@@ -189,8 +189,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="138.338"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                         </defs>
                     </svg>
