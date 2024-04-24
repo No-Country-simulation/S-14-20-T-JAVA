@@ -18,12 +18,13 @@ export default function CreateUser() {
     }
 
         return (
-            <div className="h-screen bg-primary pt-2 relative flex flex-col items-center gap-12 justify-between w-full">
+            <div className="h-screen bg-primary  relative flex flex-col items-center gap-12 justify-between w-full pt-10">
                 <section>
                     <LogoBIzWIz color="positive" />
                 </section>
 
-                <div className="rounded-tr-[100px] bg-white py-12 px-4 h-full flex items-center flex-col w-[101%] animate-fade-in-delay absolute mt-[94px]">
+                <div className="rounded-tr-[100px] bg-white py-12 px-4 h-full flex items-center flex-col 
+                w-[101%] animate-fade-in-delay absolute mt-[94px]">
                     <div className="mx-auto  flex flex-col">
                         <section className="mx-auto  flex flex-col mb-4 ">
                             <h6 className="font-black text-xl">Crear cuenta</h6>
