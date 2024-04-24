@@ -16,12 +16,8 @@ const Layout = ({
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
 
-//   Se deja comentado el console,log() que viene desde otra rama
-  //   console.log(isNavHidden)
-
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
   const PathName= window.location.pathname;
-  console.log(PathName)
   let Estilos = {};
   if(PathName == '/' ){
     

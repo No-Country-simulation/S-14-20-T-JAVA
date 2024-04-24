@@ -7,7 +7,9 @@ import { LoginAndRegisterRequest } from '../../services/LoginAndRegisterRequest'
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateUser() {
-    const { firstlastname, email, password, onInputChange } = useForm({
+    const { firstName, lastName, email, password, onInputChange } = useForm({
+        firstName:'',
+        lastName:'',
         email: '',
         password: '',
     });
@@ -21,7 +23,8 @@ export default function CreateUser() {
         const data = {
             username: email,
             password,
-            roles: 'INVITED',
+            firstName,
+            lastName
         };
 
         try {
@@ -63,12 +66,22 @@ export default function CreateUser() {
                         method=""
                     >
                         <InputComponents
-                            placeholder="Nombre y Apellido"
+                            placeholder="Nombre"
                             type="text"
-                            name="firstlastname"
-                            id="firstlastname"
+                            name="firstName"
+                            id="firstName"
                             isRequired={true}
-                            value={firstlastname}
+                            value={firstName}
+                            onInputChange={onInputChange}
+                        />
+                        <InputComponents
+                            placeholder="Apellido"
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            isRequired={true}
+                            value={lastName}
+                            onInputChange={onInputChange}
                         />
                         <InputComponents
                             placeholder="Correo Electronico"
@@ -93,7 +106,7 @@ export default function CreateUser() {
                         <div className="flex justify-end mt-4 min-w-[350px] ">
                             <GeneralButton
                                 type="submit"
-                                name="Iniciar Sesion"
+                                name="Crear cuenta"
                                 to="/createuser"
                             />
                         </div>

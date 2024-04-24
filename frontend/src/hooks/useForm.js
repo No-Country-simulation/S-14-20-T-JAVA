@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useForm = (initialState = { firstlastname:'', email: '', password: '' }) => {
+export const useForm = (initialState = { firstName:'', lastName:'', email: '', password: '' }) => {
     const [formState, setFormState] = useState(initialState);
 
     const onInputChange = ({ target }) => {
