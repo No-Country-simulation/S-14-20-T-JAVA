@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bizwiz.post.Enums.Category;
 import com.bizwiz.post.Enums.State;
 
 import jakarta.annotation.Nullable;
@@ -54,5 +55,8 @@ public class PostEntity {
 
     @Enumerated(EnumType.STRING)
     private State state;
+
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
 }

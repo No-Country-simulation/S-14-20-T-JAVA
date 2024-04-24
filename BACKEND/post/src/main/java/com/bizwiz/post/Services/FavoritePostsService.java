@@ -1,21 +1,15 @@
 package com.bizwiz.post.Services;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bizwiz.post.DTO.FavoritePostDTO;
-import com.bizwiz.post.DTO.ImageDTO;
 import com.bizwiz.post.DTO.PostDTO;
 import com.bizwiz.post.Entities.FavoritePosts;
-import com.bizwiz.post.Entities.Image;
-import com.bizwiz.post.Entities.PostEntity;
 import com.bizwiz.post.Exceptions.Personalized;
 import com.bizwiz.post.Interfaces.FavoritePostInterface;
 import com.bizwiz.post.Repositories.FavoritePostsRepository;
-import com.bizwiz.post.Repositories.PostRepository;
 
 import jakarta.transaction.Transactional;
 

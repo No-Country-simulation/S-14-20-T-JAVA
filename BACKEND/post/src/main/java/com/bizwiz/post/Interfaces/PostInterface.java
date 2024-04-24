@@ -10,7 +10,7 @@ import com.bizwiz.post.Exceptions.Personalized;
 
 public interface PostInterface {
 
-    public PostDTO createPost(String title, String content, Long idUser, List<MultipartFile> image) throws Personalized;
+    public PostDTO createPost(String title, String content, Long idUser, List<MultipartFile> image, String category) throws Personalized;
 
     public PostDTO updatePost(Long idPost, String title, String content) throws Personalized;
 
