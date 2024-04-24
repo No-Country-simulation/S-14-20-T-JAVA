@@ -53,7 +53,7 @@ export default function Report() {
         </ul>
         <button className="bg-error py-2 px-6 rounded-full text-amber-50 
              hover:scale-105 transition-transform 
-             w-[85%] absolute  bottom-20 left-6 right-0" 
+             w-[85%] absolute  bottom-[18%] left-[8%] " 
              onClick={Report}>Denunciar</button>
 
         
