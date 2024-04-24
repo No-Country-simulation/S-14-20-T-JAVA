@@ -2,90 +2,113 @@ import LogoBIzWIz from '@components/icons/LogoBIzWIz';
 import Buttondynamic from '@components/Buttondynamic';
 import InputComponents from '@components/InputComponents';
 import { GeneralButton } from '../../components/GeneralButton';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
+import { LoginAndRegisterRequest } from '../../services/LoginAndRegisterRequest';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateUser() {
     const { firstlastname, email, password, onInputChange } = useForm({
         email: '',
         password: '',
     });
+
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('email and pass ' + email, password);
-    }
 
-        return (
-            <div className="h-screen bg-primary  relative flex flex-col items-center gap-12 justify-between w-full pt-10">
-                <section>
-                    <LogoBIzWIz color="positive" />
-                </section>
+        const url = 'users/auth/register';
+        const data = {
+            username: email,
+            password,
+            roles: 'INVITED',
+        };
 
-                <div className="rounded-tr-[100px] bg-white py-12 px-4 h-full flex items-center flex-col 
-                w-[101%] animate-fade-in-delay absolute mt-[94px]">
-                    <div className="mx-auto  flex flex-col">
-                        <section className="mx-auto  flex flex-col mb-4 ">
-                            <h6 className="font-black text-xl">Crear cuenta</h6>
-                            <p className="text-[14px] opacity-75">
-                                Bienvenido a BizWiz
-                            </p>
-                        </section>
+        try {
+            const response = await LoginAndRegisterRequest(url, data);
 
-                        <form
-                            onSubmit={handleSubmit}
-                            className="flex flex-col gap-3 w-full text-[#717171]"
-                            action=""
-                            method=""
-                        >
-                            <InputComponents
-                                placeholder="Nombre y Apellido"
-                                type="text"
-                                name="firstlastname"
-                                id="firstlastname"
-                                isRequired={true}
-                                value={firstlastname}
-                            />
-                            <InputComponents
-                                placeholder="Correo Electronico"
-                                type="email"
-                                name="email"
-                                id="email"
-                                isRequired={true}
-                                value={email}
-                                onInputChange={onInputChange}
-                            />
+            // Si la respuesta es exitosa, redirige al usuario a '/home'
+            if (response.status === 200) {
+                navigate('/home');
+            } else {
+                console.error('Error al registrar usuario:', response.data);
+            }
+        } catch (error) {
+            console.error('Error al registrar usuario:', error);
+        }
+    };
 
-                            <InputComponents
-                                placeholder="Contraseña"
-                                type="password"
-                                id="password"
-                                name="password"
-                                isRequired={true}
-                                value={password}
-                                onInputChange={onInputChange}
-                            />
+    return (
+        <div className="h-screen bg-primary  relative flex flex-col items-center gap-12 justify-between w-full pt-10">
+            <section>
+                <LogoBIzWIz color="positive" />
+            </section>
 
-                            <div className="flex justify-end mt-4 min-w-[350px] ">
+            <div
+                className="rounded-tr-[100px] bg-white py-12 px-4 h-full flex items-center flex-col 
+                w-[101%] animate-fade-in-delay absolute mt-[94px]"
+            >
+                <div className="mx-auto  flex flex-col">
+                    <section className="mx-auto  flex flex-col mb-4 ">
+                        <h6 className="font-black text-xl">Crear cuenta</h6>
+                        <p className="text-[14px] opacity-75">
+                            Bienvenido a BizWiz
+                        </p>
+                    </section>
+
+                    <form
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-3 w-full text-[#717171]"
+                        action=""
+                        method=""
+                    >
+                        <InputComponents
+                            placeholder="Nombre y Apellido"
+                            type="text"
+                            name="firstlastname"
+                            id="firstlastname"
+                            isRequired={true}
+                            value={firstlastname}
+                        />
+                        <InputComponents
+                            placeholder="Correo Electronico"
+                            type="email"
+                            name="email"
+                            id="email"
+                            isRequired={true}
+                            value={email}
+                            onInputChange={onInputChange}
+                        />
+
+                        <InputComponents
+                            placeholder="Contraseña"
+                            type="password"
+                            id="password"
+                            name="password"
+                            isRequired={true}
+                            value={password}
+                            onInputChange={onInputChange}
+                        />
+
+                        <div className="flex justify-end mt-4 min-w-[350px] ">
                             <GeneralButton
                                 type="submit"
                                 name="Iniciar Sesion"
                                 to="/createuser"
                             />
-                            </div>
-                        </form>
-
-                        <div className="mt-8">
-                            <Buttondynamic
-                                name="Iniciar Sesion"
-                                name2="Crear Cuenta"
-                                to="/login"
-                                to2="/createuser"
-                            />
                         </div>
+                    </form>
+
+                    <div className="mt-8">
+                        <Buttondynamic
+                            name="Iniciar Sesion"
+                            name2="Crear Cuenta"
+                            to="/login"
+                            to2="/createuser"
+                        />
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
+}

@@ -9,7 +9,6 @@ export const useForm = (initialState = { firstlastname:'', email: '', password: 
             ...formState,
             [name]: value,
         });
-        console.log(name, value)
     };
 
     return {
