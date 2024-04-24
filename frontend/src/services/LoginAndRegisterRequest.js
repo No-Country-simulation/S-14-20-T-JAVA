@@ -12,8 +12,6 @@ export const LoginAndRegisterRequest = async (url, data) => {
 
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
-        console.log('Respuesta correcta');
-
         return response;
     } catch (error) {
         console.error('Error al registrar usuario:', error);

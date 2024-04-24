@@ -1,7 +1,7 @@
 import LogoBIzWIz from '@components/icons/LogoBIzWIz';
 import Buttondynamic from '@components/Buttondynamic';
 import InputComponents from '@components/InputComponents';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 import { GeneralButton } from '../components/GeneralButton';
 import { useForm } from '../hooks/useForm';
@@ -13,6 +13,8 @@ export default function Login() {
         password: '',
     });
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -22,7 +24,18 @@ export default function Login() {
             password,
         };
 
-        LoginAndRegisterRequest(url, data);
+        try {
+            const response = await LoginAndRegisterRequest(url, data);
+
+            // Si la respuesta es exitosa, redirige al usuario a '/home'
+            if (response.status === 200) {
+                navigate('/home');
+            } else {
+                console.error('Error al registrar usuario:', response.data);
+            }
+        } catch (error) {
+            console.error('Error al registrar usuario:', error);
+        }
     };
 
     return (

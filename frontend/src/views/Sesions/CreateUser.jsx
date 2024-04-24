@@ -4,12 +4,15 @@ import InputComponents from '@components/InputComponents';
 import { GeneralButton } from '../../components/GeneralButton';
 import { useForm } from '../../hooks/useForm';
 import { LoginAndRegisterRequest } from '../../services/LoginAndRegisterRequest';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateUser() {
     const { firstlastname, email, password, onInputChange } = useForm({
         email: '',
         password: '',
     });
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -21,7 +24,18 @@ export default function CreateUser() {
             roles: 'INVITED',
         };
 
-        LoginAndRegisterRequest(url, data);
+        try {
+            const response = await LoginAndRegisterRequest(url, data);
+
+            // Si la respuesta es exitosa, redirige al usuario a '/home'
+            if (response.status === 200) {
+                navigate('/home');
+            } else {
+                console.error('Error al registrar usuario:', response.data);
+            }
+        } catch (error) {
+            console.error('Error al registrar usuario:', error);
+        }
     };
 
     return (
