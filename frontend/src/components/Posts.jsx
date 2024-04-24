@@ -46,7 +46,7 @@ const Posts = () => {
 
   
   return (
-    <div className="m-2 mt-10">
+    <div className="m-2  snap-y h-full overflow-y-auto w-full max-w-[950px]">
       {
         postsWithData.map((photo) => (
           <Post 

@@ -2,7 +2,7 @@ import React from 'react'
 import { GeneralButton } from '../GeneralButton'
 const NameProfile = ({name, followers}) => {
   return (
-    <div className='flex  items-center gap-4'>
+    <div className='flex  items-end gap-4'>
        <div>
           <img
             className="rounded-full w-32 "
@@ -10,10 +10,10 @@ const NameProfile = ({name, followers}) => {
             alt=""
           />
         </div>
-        <article>
+        <article className='flex flex-col gap-3'>
           <h6 className="text-lg font-extrabold ">{name}</h6>
           <p className="text-xs">{followers} Seguidores</p>
-          <GeneralButton name={"Dejar de seguir"} />
+          <GeneralButton name={"Dejar de seguir"} ClassName={'bg-primary text-white p-3 rounded-full '} />
         </article>
     </div>
   )

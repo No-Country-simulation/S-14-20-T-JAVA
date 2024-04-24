@@ -56,12 +56,13 @@ export default function Search() {
   }
 
  return (
-  <div className="px-3 py-10">
-    <section className="flex items-center gap-1">
+  <div className=" flex max-lg:flex-col max-lg:justify-start max-lg:items-center px-3 py-10 w-full h-full justify-center  ">
+   <div className="w-[100%] max-w-[500px]">
+   <section className="flex items-center gap-1">
       <IconFlecha/>
       <form className="relative w-full" onSubmit={handleSubmit}>
        <InputComponents type={'text'} place={'Buscar'} Styles={'pl-10'} 
-         autoFocus={true} handleChange={handleChange} value={search}/>
+         autoFocus={true} onInputChange={handleChange} value={search}/>
        <IconSearch estilos={'absolute top-[27%] left-3'}/> 
       </form> 
     </section>
@@ -92,8 +93,10 @@ export default function Search() {
        <li className="flex gap-2" onClick={()=>Categorias('Side')}><Lapiz/>Arte y manualidades</li>
       </ul>
     </section>
+   </div>
        
-    <section className="flex my-3">
+       <div className="w-full max-w-[850px] ">
+       <section className="flex my-3 ">
      <button onClick={()=>{setPublicationuser(true)}}
       className="m-auto w-2/4 border-b-2  border-white focus:border-primary">Publicaciones</button>
      <button onClick={()=>{setPublicationuser(false)}}
@@ -103,6 +106,8 @@ export default function Search() {
     {error ?? <p className="text-red-600">{error}</p>}
     {publicationUser ?   <Publications Publications={publications}/> : <Users users={users}/> } {/**si es true muestra publicaciones  */}
      
+       </div>
+    
   </div>
   )
 }

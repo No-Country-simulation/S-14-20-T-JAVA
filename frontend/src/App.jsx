@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import Layout from '@views/layouts/Layout';
 import SplashScreen from '@views/SplashScreen';
@@ -11,8 +11,11 @@ import VerificationCode from './views/Sesions/VeriticationCode';
 import CreatePassword from './views/Sesions/CreatePassword';
 import AnotherProfile from './views/Porfile/AnotherProfile';
 import Search from '@/views/SEarch/Search';
+import Reports from "./views/Reporte/Reports";
+import Report from "./views/Reporte/Report";
 
 function App() {
+    
     return (
         <Layout>
             <Routes>
@@ -38,8 +41,14 @@ function App() {
 
                 {/* //* es la pantalla de vero que yo, Fer, le puse momentaneamente esa ruta para no tener que estar cambiando constantemente para verla. */}
                 <Route path="/profile" element={<AnotherProfile />} />
+                <Route path="/reports" element={<Reports/>}/>
+                 <Route path="reports/report" element={<Report/>}/>
             </Routes>
+
+            
         </Layout>
+
+        
     );
 }
 

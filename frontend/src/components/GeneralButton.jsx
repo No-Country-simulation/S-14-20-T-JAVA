@@ -1,10 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 
-export const GeneralButton = ({ name, to, type }) => {
+export const GeneralButton = ({ name, to, type ,ClassName}) => {
     const location = useLocation();
     const currentPath = location.pathname;
 
-    let buttonClass = '';
+    let buttonClass = ClassName;
 
     if (currentPath.includes(to)) {
         if (to === '/login') {
