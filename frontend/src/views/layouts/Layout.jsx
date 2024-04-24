@@ -48,7 +48,7 @@ const Layout = ({
       )}
     
       <main className=" flex items-center w-full flex-grow  [grid-area:main] main bg-gray-50 
-       max-lg:justify-center max-lg:overflow-y-auto lg:my-10 max-md:py-[15%]">
+       max-lg:justify-center max-lg:overflow-y-auto lg:my-10 ">
         {children}
       </main>
            
