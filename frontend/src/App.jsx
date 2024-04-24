@@ -29,7 +29,7 @@ function App() {
                     element={<SplashScreen delay={3000} destination="/login" />}
                 />
 
-                {/* <Route path="/login" element={<Login />} /> */}
+                <Route path="/login" element={<Login />} />
                 <Route
                     path="/forgottenpassword"
                     element={<Forgottenpassword />}
@@ -47,10 +47,10 @@ function App() {
                 <Route path="/profile" element={<AnotherProfile />} />
                 <Route path="/reports" element={<Reports/>}/>
                  <Route path="reports/report" element={<Report/>}/>
-              <Route path="/login" element={<SerEmprendedor />} />
+                  {/* <Route path="/login" element={<SerEmprendedor />} />
                  <Route path="/tuocupacion" element={<TuOcupacion />} />
                  <Route path="/ocupacion" element={<Ocupacion />} />
-                 <Route path="/enviado" element={<Enviado />} />
+                 <Route path="/enviado" element={<Enviado />} /> */}
             </Routes>
 
             
