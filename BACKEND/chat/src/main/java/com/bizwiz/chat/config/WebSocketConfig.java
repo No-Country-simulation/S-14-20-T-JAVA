@@ -27,9 +27,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
-                .setAllowedOrigins("http://172.21.128.1:5173", "http://192.168.0.130:5173","http://127.0.0.1:5500/","https://6626b25536d4cb205e99cbdf--loquacious-tulumba-cc4caa.netlify.app/")
+                .setAllowedOrigins("http://172.21.128.1:5173", "http://192.168.0.130:5173",
+                        "http://127.0.0.1:5500","https://6626b25536d4cb205e99cbdf--loquacious-tulumba-cc4caa.netlify.app")
                 .withSockJS();
     }
+
     @Override
     public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
         DefaultContentTypeResolver resolver = new DefaultContentTypeResolver();
@@ -41,3 +43,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         return false;
     }
 }
+
