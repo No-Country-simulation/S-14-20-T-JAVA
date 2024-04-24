@@ -20,9 +20,26 @@ const Layout = ({
   //   console.log(isNavHidden)
 
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
+  const PathName= window.location.pathname;
+  console.log(PathName)
+  let Estilos = {};
+  if(PathName == '/' ){
+    
+      Estilos={display:'flex',
+       
+        } 
+  }
 
+  if(PathName==='/login'| PathName==='/createuser'){
+    Estilos={display:'flex',
+    
+      }
+  }
   return (
-    <div className={ className } id="app"
+    <div className={ className } id="app" 
+   style={
+    Estilos
+   }
      > 
       
     
@@ -31,7 +48,7 @@ const Layout = ({
       )}
     
       <main className=" flex items-center w-full flex-grow  [grid-area:main] main bg-gray-50 
-       max-lg:justify-center max-lg:overflow-y-auto lg:my-10">
+       max-lg:justify-center max-lg:overflow-y-auto lg:my-10 max-md:py-[15%]">
         {children}
       </main>
            

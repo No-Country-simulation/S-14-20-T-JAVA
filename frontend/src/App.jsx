@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import Layout from '@views/layouts/Layout';
 import SplashScreen from '@views/SplashScreen';
@@ -15,6 +15,7 @@ import Reports from "./views/Reporte/Reports";
 import Report from "./views/Reporte/Report";
 
 function App() {
+    
     return (
         <Layout>
             <Routes>

@@ -4,7 +4,7 @@ export default function Publications({Publications}) {
     return (
     <div className="h-full snap-y">
         
-     <ul className="snap-y h-full overflow-y-auto" style={{
+     <ul className="snap-y h-full overflow-y-auto pt-3" style={{
       display:"grid",
       gridTemplateColumns:'repeat(auto-fit,minmax(190px,2fr))',
       gridTemplateRows:'max-content',

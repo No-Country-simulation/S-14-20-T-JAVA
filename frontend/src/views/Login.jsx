@@ -20,7 +20,7 @@ export default function Login() {
     };
 
     return (
-        <div className="h-screen bg-white pt-2 relative flex flex-col items-center gap-12 justify-between w-full">
+        <div className="h-screen bg-white  relative flex flex-col items-center gap-12 justify-between w-full pt-10">
             <section>
                 <LogoBIzWIz color="" />
             </section>
