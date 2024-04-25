@@ -47,10 +47,10 @@ function App() {
                 <Route path="/profile" element={<AnotherProfile />} />
                 <Route path="/reports" element={<Reports/>}/>
                  <Route path="reports/report" element={<Report/>}/>
-                  {/* <Route path="/login" element={<SerEmprendedor />} />
+                  <Route path="/login" element={<SerEmprendedor />} />
                  <Route path="/tuocupacion" element={<TuOcupacion />} />
                  <Route path="/ocupacion" element={<Ocupacion />} />
-                 <Route path="/enviado" element={<Enviado />} /> */}
+                 <Route path="/enviado" element={<Enviado />} />
             </Routes>
 
             
