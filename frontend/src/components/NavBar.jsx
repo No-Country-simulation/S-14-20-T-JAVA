@@ -2,6 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import IconUser from "@components/icons/IconUser";
 import IconHome from "@components/icons/IconHome";
 import IconMessage from '@components/icons/IconMessage'
+import IconNewPost from "./icons/IconNewPost";
 
 export default function NavBar({styles}) {
   
@@ -16,6 +17,10 @@ export default function NavBar({styles}) {
       <NavLink to="/chat" activeStyle={activeClass}>
         <IconMessage />
       </NavLink>
+      <NavLink to="/newpost" activeStyle={activeClass}>
+        <IconNewPost />
+      </NavLink>
+      
       <NavLink to="/profile" activeStyle={activeClass}>
        <IconUser />
       </NavLink>
