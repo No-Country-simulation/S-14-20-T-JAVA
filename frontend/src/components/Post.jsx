@@ -15,28 +15,29 @@ const Post = ({id,image,user,title,body}) => {
                   <h3 className="font-semibold  text-base">
                     {user}
                   </h3>
-                  <p className="text-sm font-normal text-[#717171]">{title.substring(0,8)}...</p>
+                  <p className="text-sm font-normal text-[#717171]">{title}...</p>
         </div>
         </div>
         <div className="flex items-center">
           <FollowBtn className="mr-2"/>
         </div>
       </header>
-      <article key={id}>
-        <img src={image} className="" alt="" />
+      <section key={id}
+      className=""  >
+        <img src={`data:image/png;base64,${image}`} className="max-w-full h-auto object-cover " alt="" />
       <footer className="flex flex-row gap-2 mt-2">
         <IconLike/>
         <IconComment/>
         <IconFavorite/>
       </footer>
       <h6 className="font-semibold text-lg">
-      {title.substring(0,8)}
+      {title}
       </h6>
           <p className="font-roboto-flex">
 
           {body}
           </p>
-      </article>
+      </section>
 
     </main>
   );

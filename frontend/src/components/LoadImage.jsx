@@ -34,7 +34,7 @@ const LoadImage = () => {
 
     // Validación de datos
     if (!selectedFile || !title || !content || !valorSeleccionado) {
-      alert('Por favor completa todos los campos y selecciona una imagen');
+      Swal.fire('Por favor completa todos los campos y selecciona una imagen');
       return;
     }
 
@@ -88,7 +88,7 @@ const LoadImage = () => {
       <form onSubmit={handleSubmit} className="grid grid-cols-2 font-roboto-flex">
         <section>
           {imageUrl ?
-            <img src={imageUrl} className="w-96 h-auto object-cover" alt="Imagen seleccionada" /> :
+            <img src={imageUrl} className="w-96 h-auto max-h-96 object-cover" alt="Imagen seleccionada" /> :
             <IconImage />
           }
           <label

@@ -13,8 +13,8 @@ export default function Publications({Publications}) {
          ?  Publications.map(publication => (
           <li key={ publication.id }
            className="snap-proximity snap-center">
-           <div className="relative snap-center">
-            <img src={ publication.image } className="w-full h-auto snap-center snap-always"/>
+           <div className="relative snap-center max-w-96">
+            <img src={`data:image/jpeg;base64,${publication.image[0].content} `} className="w-full h-auto snap-center snap-always"/>
             <p className="bg-opacity-40 bg-black text-white absolute  
               w-full bottom-0 px-5 py-2">
               { publication.id }k me gustas</p>

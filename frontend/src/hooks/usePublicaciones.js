@@ -12,7 +12,8 @@ export function usePublicaciones({Search}){
 
     if(search === '') return;
 
-    let url = 'http://34.49.227.176/posts/get/posts/'+search;
+    let url = 'http://34.49.227.176/posts/get/posts/'+ search;
+    
       if( categoria.length > 0){
         url = 'http://34.49.227.176/posts/get/posts/category/'+categoria ;
         } 
