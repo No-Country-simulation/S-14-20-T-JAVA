@@ -13,20 +13,20 @@ export default function LogoBIzWIz({ color }) {
                     >
                         <g filter="url(#filter0_d_129_1375)">
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M68.9244 18.5891C79.3869 12.0225 93.7709 6.14106 100.779 9.08178C126.655 20.0843 109.968 50.5423 101.71 63.0146C108.204 63.8972 136.04 74.3114 128.811 91.2425C121.117 109.62 80.9802 110.183 66.0575 95.2607C80.4898 103.347 117.148 99.7934 109.968 80.068C108.008 74.9469 99.0397 70.781 90.2914 68.2325C100.779 51.5459 107.909 32.0892 93.036 25.18C71.1047 14.9862 33.9082 57.6719 47.9738 83.2049C-1.25312 51.1791 16.5848 -38.5035 68.9244 18.5891ZM47.9738 83.2049C4.11252 37.7503 37.6335 -3.7331 61.5987 26.0384C43.7111 45.0047 38.4664 70.9032 47.9738 83.2049Z"
                                 fill="white"
                             />
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M48.0578 83.3475C40.3271 66.0317 65.6818 41.9137 75.165 44.2851C79.9066 45.5218 87.636 51.1906 75.165 74.3814C81.6577 74.6909 87.4297 79.7407 86.9151 84.1728C85.988 91.2845 73.722 96.747 66.1989 95.304C81.3495 100.973 104.54 90.0479 97.9432 79.0198C94.6446 73.5574 88.1518 72.0112 81.0401 71.5986C87.636 62.6312 97.3242 38.9259 80.9369 33.2571C60.8383 26.4536 39.0917 66.0317 48.0578 83.3475Z"
                                 fill="white"
                             />
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M48.0578 83.3474C20.2298 54.0764 36.2045 18.3114 55.0664 34.4936C53.6234 36.2461 51.5615 39.7498 50.428 41.7085C32.185 43.1502 37.8538 72.0098 48.0578 83.3474Z"
                                 fill="white"
                             />
@@ -43,10 +43,10 @@ export default function LogoBIzWIz({ color }) {
                                 width="148"
                                 height="163.676"
                                 filterUnits="userSpaceOnUse"
-                                color-interpolation-filters="sRGB"
+                                colorInterpolationFilters="sRGB"
                             >
                                 <feFlood
-                                    flood-opacity="0"
+                                    floodOpacity="0"
                                     result="BackgroundImageFix"
                                 />
                                 <feColorMatrix
@@ -87,20 +87,20 @@ export default function LogoBIzWIz({ color }) {
                     >
                         <g filter="url(#filter0_d_127_1240)">
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M68.9244 18.5891C79.3869 12.0225 93.7709 6.14106 100.779 9.08178C126.655 20.0843 109.968 50.5423 101.71 63.0146C108.204 63.8972 136.04 74.3114 128.811 91.2425C121.117 109.62 80.9802 110.183 66.0575 95.2607C80.4898 103.347 117.148 99.7934 109.968 80.068C108.008 74.9469 99.0397 70.781 90.2914 68.2325C100.779 51.5459 107.909 32.0892 93.036 25.18C71.1047 14.9862 33.9082 57.6719 47.9738 83.2049C-1.25312 51.1791 16.5848 -38.5035 68.9244 18.5891ZM47.9738 83.2049C4.11252 37.7503 37.6335 -3.7331 61.5987 26.0384C43.7111 45.0047 38.4664 70.9032 47.9738 83.2049Z"
                                 fill="url(#paint0_linear_127_1240)"
                             />
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M48.0578 83.3474C40.3271 66.0317 65.6818 41.9137 75.165 44.2851C79.9066 45.5217 87.636 51.1905 75.165 74.3813C81.6577 74.6908 87.4297 79.7406 86.9151 84.1727C85.988 91.2845 73.722 96.7469 66.1989 95.3039C81.3495 100.973 104.54 90.0478 97.9432 79.0198C94.6446 73.5573 88.1518 72.0112 81.0401 71.5985C87.636 62.6312 97.3242 38.9258 80.9369 33.2571C60.8383 26.4535 39.0917 66.0317 48.0578 83.3474Z"
                                 fill="url(#paint1_linear_127_1240)"
                             />
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M48.0578 83.3473C20.2298 54.0763 36.2045 18.3113 55.0664 34.4936C53.6234 36.246 51.5615 39.7497 50.428 41.7085C32.185 43.1502 37.8538 72.0098 48.0578 83.3473Z"
                                 fill="url(#paint2_linear_127_1240)"
                             />
@@ -117,10 +117,10 @@ export default function LogoBIzWIz({ color }) {
                                 width="148"
                                 height="163.676"
                                 filterUnits="userSpaceOnUse"
-                                color-interpolation-filters="sRGB"
+                                colorInterpolationFilters="sRGB"
                             >
                                 <feFlood
-                                    flood-opacity="0"
+                                    floodOpacity="0"
                                     result="BackgroundImageFix"
                                 />
                                 <feColorMatrix
@@ -156,8 +156,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="52.8993"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint1_linear_127_1240"
@@ -167,8 +167,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="64.6651"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint2_linear_127_1240"
@@ -178,8 +178,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="56.9019"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                             <linearGradient
                                 id="paint3_linear_127_1240"
@@ -189,8 +189,8 @@ export default function LogoBIzWIz({ color }) {
                                 y2="138.338"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#851291" />
-                                <stop offset="1" stop-color="#65006F" />
+                                <stop stopColor="#851291" />
+                                <stop offset="1" stopColor="#65006F" />
                             </linearGradient>
                         </defs>
                     </svg>

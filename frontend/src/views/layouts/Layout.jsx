@@ -16,12 +16,8 @@ const Layout = ({
 
   const isNavHidden = hiddenNavPaths.includes(location.pathname);
 
-//   Se deja comentado el console,log() que viene desde otra rama
-  //   console.log(isNavHidden)
-
   const isHeaderHidden = hiddenHeaderPaths.includes(location.pathname);
   const PathName= window.location.pathname;
-  console.log(PathName)
   let Estilos = {};
   if(PathName == '/' ){
     
@@ -48,7 +44,7 @@ const Layout = ({
       )}
     
       <main className=" flex items-center w-full flex-grow  [grid-area:main] main bg-gray-50 
-       max-lg:justify-center max-lg:overflow-y-auto lg:my-10 max-md:py-[15%]">
+       max-lg:justify-center max-lg:overflow-y-auto lg:my-10 ">
         {children}
       </main>
            
