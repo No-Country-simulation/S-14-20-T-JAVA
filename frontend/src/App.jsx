@@ -16,6 +16,7 @@ import Report from "./views/Reporte/Report";
 import Ocupacion from './components/FormularioEmprendedor/Ocupacion';
 import TuOcupacion from './components/FormularioEmprendedor/tuOcupacion';
 import Enviado from './components/FormularioEmprendedor/Enviado'
+import NewPost from './views/NewPost';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
                 <Route path="/profile" element={<AnotherProfile />} />
                 <Route path="/reports" element={<Reports/>}/>
                  <Route path="reports/report" element={<Report/>}/>
+                 <Route path="/newpost" element={<NewPost/>}/>
+
+                 
                   {/* <Route path="/login" element={<SerEmprendedor />} />
                  <Route path="/tuocupacion" element={<TuOcupacion />} />
                  <Route path="/ocupacion" element={<Ocupacion />} />
