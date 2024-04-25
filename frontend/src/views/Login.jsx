@@ -29,8 +29,10 @@ export default function Login() {
 
             // Si la respuesta es exitosa, redirige al usuario a '/home'
             if (response.status === 200) {
+
                 localStorage.setItem('idUser', response.data.idUser);
                 console.log(response)
+
 
                 navigate('/home');
             } else {

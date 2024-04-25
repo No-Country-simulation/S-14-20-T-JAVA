@@ -23,6 +23,8 @@ const Posts = () => {
     fetchData();
   }, []);
 
+
+
   return (
     <div className="m-2 snap-y h-full overflow-y-auto w-full max-w-[950px]">
       {
