@@ -41,11 +41,12 @@ public class PostController {
             // then create the postDTO calling the service "createPost" and return it.
             String title = request.getParameter("title");
             String content = request.getParameter("content");
+            String category = request.getParameter("category");
             Long idUser = Long.parseLong(request.getParameter("idUser"));
 
             List<MultipartFile> imagesList = request.getFiles("images");
 
-            PostDTO postDTO = postService.createPost(title, content, idUser, imagesList);
+            PostDTO postDTO = postService.createPost(title, content, idUser, imagesList, category);
             return ResponseEntity.ok(postDTO);
         } catch (Personalized e) {
             // Catches the personalized exception message and returns it.
@@ -92,6 +93,20 @@ public class PostController {
             return ResponseEntity.ok(postService.deletePost(idPost));
         } catch (Personalized e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+
+    /**
+     * This API should return all categories for a post.
+     * @return
+     */
+    @GetMapping("/categories")
+    public ResponseEntity<?> getCategories() {
+        
+        try {
+            return ResponseEntity.ok(postService.getCategories());
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body("Internal server error.");
         }

@@ -16,13 +16,15 @@ public class PostDTO implements Serializable {
     private LocalDate date;
     private Long idUser;
     private Long id;
+    private String category;
 
-    public PostDTO(String title, String content, List<ImageDTO> image, LocalDate date, Long id) {
+    public PostDTO(String title, String content, List<ImageDTO> image, LocalDate date, Long id, String category) {
         this.title = title;
         this.content = content;
         this.image = image;
         this.date = date;
         this.id = id;
+        this.category = category;
     }
 
 }

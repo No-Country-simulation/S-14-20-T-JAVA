@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -14,6 +15,7 @@ import com.bizwiz.post.DTO.ImageDTO;
 import com.bizwiz.post.DTO.PostDTO;
 import com.bizwiz.post.Entities.Image;
 import com.bizwiz.post.Entities.PostEntity;
+import com.bizwiz.post.Enums.Category;
 import com.bizwiz.post.Enums.State;
 import com.bizwiz.post.Exceptions.Personalized;
 import com.bizwiz.post.Interfaces.PostInterface;
@@ -75,14 +77,14 @@ public class PostService implements PostInterface {
      */
     @Override
     @Transactional
-    public PostDTO createPost(String title, String content, Long idUser, List<MultipartFile> images)
+    public PostDTO createPost(String title, String content, Long idUser, List<MultipartFile> images, String category)
             throws Personalized {
 
         try {
 
             // verify if the data of the post is valid by setting it to a PostDTO and then
             // sending this DTO to the verification method
-            PostDTO postDTO = new PostDTO(title, content, null, null, null);
+            PostDTO postDTO = new PostDTO(title, content, null, null, null, null);
             dataVerification(postDTO);
 
             PostEntity post = new PostEntity();
@@ -92,6 +94,7 @@ public class PostService implements PostInterface {
             post.setContent(content);
             post.setTitle(title);
             post.setIdUser(idUser);
+            post.setCategory(Category.valueOf(category));
 
             List<ImageDTO> imageDTO = new ArrayList<>();
 
@@ -113,7 +116,7 @@ public class PostService implements PostInterface {
             postRepository.save(post);
 
             return new PostDTO(post.getTitle(), post.getContent(), imageDTO,
-                    post.getDate(), post.getId());
+                    post.getDate(), post.getId(), post.getCategory().name());
 
         } catch (Exception e) {
 
@@ -194,6 +197,16 @@ public class PostService implements PostInterface {
     }
 
     /**
+     * Get all categories of a post.
+     * @return
+     */
+    public List<String> getCategories() {
+        return Arrays.stream(Category.values())
+                .map(Enum::name)
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Get a post searching it by post id.
      * 
      * @param idPost
@@ -216,7 +229,7 @@ public class PostService implements PostInterface {
                 images.add(imageDTO);
             }
 
-            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId());
+            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name());
 
         } catch (Exception e) {
             throw new Personalized("Error getting post: " + e.getMessage());
@@ -246,7 +259,7 @@ public class PostService implements PostInterface {
                             post.getId());
                     images.add(imageDTO);
                 }
-                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId()));
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name()));
                 images = new ArrayList<>();
             }
 
@@ -284,7 +297,7 @@ public class PostService implements PostInterface {
                 }
                 // Add the post and images to the "postsDTO" list, and then resets the "images"
                 // list to evade errors.
-                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId()));
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name()));
                 images = new ArrayList<>();
             }
 
