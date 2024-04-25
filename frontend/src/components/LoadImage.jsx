@@ -25,12 +25,20 @@ console.log(selectedFile)
     setValorSeleccionado(e.target.value);
   };
   useEffect(() => {
+    const formData = new FormData();
+   
+    formData.append('title', title);
+    formData.append('content', content);
+    formData.append('category', valorSeleccionado);
+    formData.append('idUser', idUser);
+    formData.append('images', selectedFile);
+    console.log(formData)
     useCategories()
     .then(response => setCategories(response))
-  },[imageUrl])
-  const handleFileChange = (event) => {
-
-    const file = event.target.files[0];
+  },[imageUrl,selectedFile,title,content,valorSeleccionado])
+  const handleFileChange = async (event) => {
+    console.log(event.target.files[0])
+    const file = await event.target.files[0];
     setSelectedFile(file);
     const imageUrl = URL.createObjectURL(file);
   setImageUrl(imageUrl);
@@ -39,22 +47,14 @@ console.log(selectedFile)
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-   
-    formData.append('title', title);
-    formData.append('content', content);
-    formData.append('category', valorSeleccionado);
-    formData.append('idUser', idUser);
-    formData.append('images', selectedFile);
+    
     // Crea un objeto FormData
    
     // Agrega los campos del formulario al objeto FormData
     
-    console.log(formData)
     // Envía los datos al servidor usando fetch o axios
     try {
-     
-      console.log(formData)
+
       await axios.post(`${baseUrl}posts/create`, formData)
       Swal.fire({
         icon: 'success',
@@ -95,6 +95,7 @@ console.log(selectedFile)
       </label>
       <input
         id="file-upload"
+        name="file-upload"
         type="file"
         onChange={handleFileChange}
         className="hidden"
