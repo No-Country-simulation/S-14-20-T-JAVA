@@ -50,6 +50,9 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
   - Javascript
   - React
   - Vite
+  
+- [Diseño]
+  - Figma
 
 ## Equipo
 - Team Lead
@@ -67,3 +70,6 @@ conectar con otros emprendedores y recibir retroalimentación valiosa. Además, 
   - Santiago Paguaga
   - Elián Bargaz
   - Rodrigo Georgetti
+
+## Figma
+https://www.figma.com/file/gVcJc2DF0V9JB2BkTAt9mE/NC---BizWiz?type=design&node-id=0%3A1&mode=design&t=v88MVxZqHtXPlSH7-1
