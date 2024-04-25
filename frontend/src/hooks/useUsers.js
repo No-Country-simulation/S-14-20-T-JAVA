@@ -9,14 +9,16 @@ export function useUsers({Search}){
     
   const getUser = useCallback(async ({search}) => {
 
-   if(search === previousSearch.current) return;    
+   if(search === previousSearch.current | search==='') return;    
   
    try{
-      
-       let url = 'https://freetestapi.com/api/v1/students?search=' + search;
-       if(search.length == 0){
+        
+
+       let url = 'http://34.49.227.176/users/username/' + search;
+      /* if(search.length == 0){
          url = 'https://freetestapi.com/api/v1/students';
-        } 
+        }
+        */ 
          
         console.log(url)
         setIsLoading(true);

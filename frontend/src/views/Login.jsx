@@ -31,6 +31,7 @@ export default function Login() {
             if (response.status === 200) {
                 localStorage.setItem('idUser', response.data.idUser);
                 console.log(response)
+
                 navigate('/home');
             } else {
                 console.error('Error al registrar usuario:', response.data);
