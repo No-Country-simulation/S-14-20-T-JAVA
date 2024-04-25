@@ -17,16 +17,10 @@ const LoadImage = () => {
 console.log(title)
 console.log(content)
 console.log(valorSeleccionado)
-console.log(selectedFile.name)
+console.log(selectedFile)
 
-const form= {
-  title,
-  content,
-  category:valorSeleccionado,
-  idUser,
-  images:selectedFile
-}
-console.log(form)
+
+
   const handleCambio = (e) => {
     setValorSeleccionado(e.target.value);
   };
@@ -37,21 +31,21 @@ console.log(form)
   const handleFileChange = (event) => {
 
     const file = event.target.files[0];
-
     setSelectedFile(file);
     const imageUrl = URL.createObjectURL(file);
   setImageUrl(imageUrl);
   }
   ;
-  const formData = new FormData();
-  formData.append('title', title);
-  formData.append('content', content);
-  formData.append('category', valorSeleccionado);
-  formData.append('idUser', idUser);
-  formData.append('images', selectedFile, selectedFile.name);
-  const handleSubmit = async (event) => {
-    event.preventDefault();
   
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+   
+    formData.append('title', title);
+    formData.append('content', content);
+    formData.append('category', valorSeleccionado);
+    formData.append('idUser', idUser);
+    formData.append('images', selectedFile);
     // Crea un objeto FormData
    
     // Agrega los campos del formulario al objeto FormData
@@ -84,11 +78,11 @@ console.log(form)
     {valorSeleccionado &&<button 
     className="flex items-center justify-center bg-primary  hover:bg-primaryPressed  rounded-full min-w-[211px] min-h-[50px]  max-w-96 font-semibold shadow-[-5px_1px_4px_0px_#00000038] text-loginButton md:text-button-font-size"
     type="button"
-    onClick={(e)=>handleSubmit(e)}
+    onClick={handleSubmit}
     >Crear post</button>}
     </div>
 
-  <form onSubmit={handleSubmit} className=" grid grid-cols-2 font-roboto-flex">
+  <form className=" grid grid-cols-2 font-roboto-flex">
     <section>
       
     {imageUrl ? 
@@ -113,6 +107,8 @@ console.log(form)
           <UserIconFilled/>
           <input type="text" 
           value={title} 
+          id="title"
+          name="title"
           onChange={(e) => setTitle(e.target.value)} 
           placeholder="Nombre de la publicación" className=" w-80 h-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary items-center justify-center bg-gray-50" />
           </div>
@@ -120,13 +116,15 @@ console.log(form)
 
           <h6 className="py-2">Descripción</h6>
          <textarea className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl bg-gray-50 w-96 h-32" 
-         value={content} onChange={(e) => setContent(e.target.value)}  />
+         value={content} id="content" name="content" onChange={(e) => setContent(e.target.value)}  />
          
           <h6 className="py-2">
           Categoría
           </h6>
           <select
         value={valorSeleccionado}
+        id="category"
+        name="category"
         onChange={handleCambio}
         className="form-select appearance-none block w-96 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
       >
@@ -141,6 +139,11 @@ console.log(form)
           </div>
         </section>
       }
+      {/* <button 
+    className="flex items-center justify-center bg-primary  hover:bg-primaryPressed  rounded-full min-w-[211px] min-h-[50px]  max-w-96 font-semibold shadow-[-5px_1px_4px_0px_#00000038] text-loginButton md:text-button-font-size"
+    type="button"
+    onClick={(e)=>handleSubmit(e)}
+    >Crear post</button> */}
 </form>
     </>
   )
