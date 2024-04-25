@@ -9,7 +9,7 @@ export default function Users({users}) {
     gap:'25px'}}>  
     {users.length > 0  
      ? users.map(user=>(
-      <li key={user.id} className=" w-full flex items-start">
+      <li key={user.idUser} className=" w-full flex items-start">
        <div className="flex items-start gap-3 w-full">
         
         <picture className="w-full max-w-28 ">
@@ -20,8 +20,8 @@ export default function Users({users}) {
 
         <section className="w-full flex flex-wrap justify-between items-center">
           <section>
-          <h6 className="font-medium">{user.name}</h6>
-         <p className="text-disabled">Ropas y mucho mas</p>
+          <h6 className="font-medium">{user.firstName} {user.lastName}</h6>
+         <p className="text-disabled">{user.role}</p>
 
           </section>
         

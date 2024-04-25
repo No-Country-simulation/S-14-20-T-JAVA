@@ -32,10 +32,10 @@ const Posts = () => {
   
   const filteredPhotos = photos.map(photo => ({
     id: photo.id,
-    photographer: photo.photographer,
-    image: photo.src.large,
-    title:"",
-    body:""
+    photographer: photo.image,
+    image: photo.src.image,
+    title:photo.title,
+    body:photo.content
   }));
   const postsWithData = filteredPhotos.map((photo, index) => ({
     ...photo,

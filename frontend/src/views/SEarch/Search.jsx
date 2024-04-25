@@ -87,10 +87,10 @@ export default function Search() {
      
       <ul className="mt-5 pl-2 flex flex-col gap-3" 
         style={ displayCate ? {display:'none'} : {display:'flex'}}>
-       <li className="flex gap-2" onClick={()=>Categorias('Seafood')} ><Coche/> Vehículos</li>
-       <li className="flex gap-2" onClick={()=>Categorias('Chiken')}><Corbata/>Accesorios</li>
-       <li className="flex gap-2" onClick={()=>Categorias('Pasta')}><Sofa/>Muebles</li>
-       <li className="flex gap-2" onClick={()=>Categorias('Side')}><Lapiz/>Arte y manualidades</li>
+       <li className="flex gap-2" onClick={()=>Categorias('VENTAS')} ><Coche/> Vehículos</li>
+       <li className="flex gap-2" onClick={()=>Categorias('FINANZAS')}><Corbata/>Accesorios</li>
+       <li className="flex gap-2" onClick={()=>Categorias('ANALITICA')}><Sofa/>Muebles</li>
+       <li className="flex gap-2" onClick={()=>Categorias('TECNOLOGIA')}><Lapiz/>Arte y manualidades</li>
       </ul>
     </section>
    </div>
