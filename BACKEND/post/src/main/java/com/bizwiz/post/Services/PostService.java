@@ -140,7 +140,7 @@ public class PostService implements PostInterface {
             // Verify if the data of the post is valid by setting it to a PostDTO and then
             // sending this DTO to the verification method, also we verify if the state is
             // active or not.
-            dataVerification(new PostDTO(title, content, null, null, null));
+            dataVerification(new PostDTO(title, content, null, null, null, null));
             StateVerification(idPost);
 
             PostEntity post = postRepository.findById(idPost).orElse(null);
@@ -159,7 +159,8 @@ public class PostService implements PostInterface {
                 images.add(imageDTO);
             }
 
-            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId());
+            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(),
+                    post.getCategory().name());
 
         } catch (Exception e) {
             throw new Personalized("Error updating post: " + e.getMessage());
@@ -198,6 +199,7 @@ public class PostService implements PostInterface {
 
     /**
      * Get all categories of a post.
+     * 
      * @return
      */
     public List<String> getCategories() {
@@ -229,11 +231,40 @@ public class PostService implements PostInterface {
                 images.add(imageDTO);
             }
 
-            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name());
+            return new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(),
+                    post.getCategory().name());
 
         } catch (Exception e) {
             throw new Personalized("Error getting post: " + e.getMessage());
         }
+    }
+
+    @Override
+    public ArrayList<PostDTO> getPostsByCategory(String category) throws Exception {
+
+        try {
+
+            ArrayList<PostDTO> postsDTO = new ArrayList<>();
+            List<ImageDTO> images = new ArrayList<>();
+            Category categoryEnum = Category.valueOf(category);
+
+            for (PostEntity post : postRepository.findAllByCategory(categoryEnum)) {
+                for (Image image : post.getImage()) {
+                    ImageDTO imageDTO = new ImageDTO(image.getMime(), image.getName(), image.getContent(),
+                            post.getId());
+                    images.add(imageDTO);
+                }
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(),
+                        post.getCategory().name()));
+                images = new ArrayList<>();
+            }
+
+            return postsDTO;
+
+        } catch (Exception e) {
+            throw new Exception("Error getting posts: " + e.getMessage());
+        }
+
     }
 
     /**
@@ -244,7 +275,7 @@ public class PostService implements PostInterface {
      * @return ArrayList<PostDTO>
      */
     @Override
-    public ArrayList<PostDTO> getPostsByTitle(String title) throws Personalized {
+    public ArrayList<PostDTO> getPostsByTitle(String title) throws Exception{
 
         try {
 
@@ -259,13 +290,14 @@ public class PostService implements PostInterface {
                             post.getId());
                     images.add(imageDTO);
                 }
-                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name()));
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(),
+                        post.getCategory().name()));
                 images = new ArrayList<>();
             }
 
             return postsDTO;
         } catch (Exception e) {
-            throw new Personalized("Error getting posts: " + e.getMessage());
+            throw new Exception("Error getting posts: " + e.getMessage());
         }
     }
 
@@ -297,7 +329,8 @@ public class PostService implements PostInterface {
                 }
                 // Add the post and images to the "postsDTO" list, and then resets the "images"
                 // list to evade errors.
-                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(), post.getCategory().name()));
+                postsDTO.add(new PostDTO(post.getTitle(), post.getContent(), images, post.getDate(), post.getId(),
+                        post.getCategory().name()));
                 images = new ArrayList<>();
             }
 

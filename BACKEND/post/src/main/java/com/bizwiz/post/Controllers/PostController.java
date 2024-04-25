@@ -130,6 +130,16 @@ public class PostController {
         }
     }
 
+    @GetMapping("/get/posts/category/{category}")
+    public ResponseEntity<?> getPostsByCategory(@PathVariable String category) throws Exception{
+        
+        try {
+            return ResponseEntity.ok(postService.getPostsByCategory(category));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Internal server error.");
+        }
+    }
+
     /**
      * This API should find all active posts using the "title" parameter.
      * @param title
@@ -137,12 +147,10 @@ public class PostController {
      * @throws Personalized
      */
     @GetMapping("/get/posts/{title}")
-    public ResponseEntity<?> getPosts(@PathVariable String title) throws Personalized {
+    public ResponseEntity<?> getPostsByTitle(@PathVariable String title) throws Exception {
 
         try {
             return ResponseEntity.ok(postService.getPostsByTitle(title));
-        } catch (Personalized e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body("Internal server error.");
         }
