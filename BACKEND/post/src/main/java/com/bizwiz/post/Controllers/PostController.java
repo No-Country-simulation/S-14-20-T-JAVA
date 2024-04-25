@@ -130,6 +130,12 @@ public class PostController {
         }
     }
 
+    /**
+     * This API should find all active posts using the "category" parameter.
+     * @param category
+     * @return ResponseEntity
+     * @throws Exception
+     */
     @GetMapping("/get/posts/category/{category}")
     public ResponseEntity<?> getPostsByCategory(@PathVariable String category) throws Exception{
         
@@ -144,7 +150,7 @@ public class PostController {
      * This API should find all active posts using the "title" parameter.
      * @param title
      * @return ResponseEntity
-     * @throws Personalized
+     * @throws Exception
      */
     @GetMapping("/get/posts/{title}")
     public ResponseEntity<?> getPostsByTitle(@PathVariable String title) throws Exception {

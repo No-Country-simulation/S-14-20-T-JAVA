@@ -239,6 +239,13 @@ public class PostService implements PostInterface {
         }
     }
 
+    /**
+     * Get all posts of a user searching it by category.
+     * 
+     * @param category
+     * @throws Exception
+     * @return ArrayList<PostDTO>
+     */
     @Override
     public ArrayList<PostDTO> getPostsByCategory(String category) throws Exception {
 
