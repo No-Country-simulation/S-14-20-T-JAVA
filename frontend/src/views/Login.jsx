@@ -29,6 +29,7 @@ export default function Login() {
 
             // Si la respuesta es exitosa, redirige al usuario a '/home'
             if (response.status === 200) {
+               console.log(response.data.idUser); 
                 navigate('/home');
             } else {
                 console.error('Error al registrar usuario:', response.data);
