@@ -10,9 +10,14 @@ export function usePublicaciones({Search}){
     
   const getPublication = useCallback(async ({search, categoria = ''}) => {
 
-    let url = 'https://www.themealdb.com/api/json/v1/1/search.php?s='+search;
+    if(search === '') return;
+
+
+    let url = 'http://34.49.227.176/posts/get/posts/'+ search;
+    
+
       if( categoria.length > 0){
-        url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+categoria ;
+        url = 'http://34.49.227.176/posts/get/posts/category/'+categoria ;
         } 
 
        
@@ -22,7 +27,7 @@ export function usePublicaciones({Search}){
         previousSearch.current = search;
         const newPublications = await get({url})
         console.log(newPublications)
-        setPublications(newPublications.meals);  
+        setPublications(newPublications);  
         
       } catch(e){
         Error(e.message);

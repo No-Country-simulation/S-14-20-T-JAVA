@@ -1,0 +1,68 @@
+@media (min-width: 768px) {
+    
+    #app{
+        display: grid;
+        grid-template-areas:
+        "header main main"
+         "footer main main";
+         grid-template-columns: 246px  1fr  ;
+         grid-template-rows: 130px 1fr;
+    height: 100vh;
+    overflow: hidden;
+         
+    
+    }
+    #app .header, #app .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: static;
+        gap: 10px;    
+    }
+
+
+#app .header{
+    height: auto;
+    padding:0 ;
+    margin-top: 40px;
+   
+}
+#app  > main{
+    margin: 0;
+    border-left: 1px solid #00000040;
+    box-shadow: inset 1px -2px 4px 3px #00000040;
+    justify-content: center;
+}
+
+#app .main>div{
+    display: flex;
+    gap: 40px;
+  
+}
+
+
+footer{
+   
+    margin:0 auto ;
+}
+}
+
+@media (max-width:767px) {
+
+    #app .header{
+        position: fixed;
+        
+    }
+
+  
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+
+
+
+

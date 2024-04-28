@@ -35,8 +35,9 @@ const AnotherProfile = () => {
   };
 
   return (
-    <section className="flex flex-col gap-8 p-2">
-      <article>
+    <section className="flex flex-row gap-11 p-2 h-full w-full max-lg:flex-col">
+    <div className="w-[100%] max-w-[600px] p-9 flex gap-6  flex-col">
+    <article>
     <IconoFlecha/>
       </article>
 
@@ -51,8 +52,10 @@ const AnotherProfile = () => {
      description={'Ofrezco una variedad de accesorios, ropa y joyas únicas. Mi objetivo es brindar a mis clientes piezas elegantes y originales que les permitan expresar su estilo con confianza. ¡Descubre el brillo y la belleza en cada detalle de mi colección!'}
      
      />
-
-      <section className="flex font-extrabold justify-evenly ">
+    </div>
+     
+     <div className="w-[100%] max-w-[900px] mt-10">
+     <section className="flex font-extrabold justify-evenly mb-10">
         <Link onClick={() => handleClick("Element1")} className="inline-block text-gray-600 border-b-2 border-transparent focus:border-primary focus:outline-none">Accesorios</Link>
         <Link onClick={() => handleClick("Element2")} className="inline-block text-gray-600 border-b-2 border-transparent focus:border-primary focus:outline-none">Joyas</Link>
         <Link onClick={() => handleClick("Element3")} className="inline-block text-gray-600 border-b-2 border-transparent focus:border-primary focus:outline-none">Ropa</Link>
@@ -62,7 +65,10 @@ const AnotherProfile = () => {
       {publicationType && (
         <Publication publications={publications[publicationType]} />
       )}
-    </section>
+  
+     </div>
+
+     </section>
   );
 };
 

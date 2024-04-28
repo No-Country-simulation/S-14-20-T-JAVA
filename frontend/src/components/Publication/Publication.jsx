@@ -2,7 +2,11 @@ import React from "react";
 
 const Publication = ({ publications }) => {
   return (
-    <section className="grid grid-cols-2 gap-3 self-center ">
+    <section className="grid gap-3 self-center "
+     style={{
+      gridTemplateColumns:'repeat(auto-fill, minmax(150px, 1fr))',
+      gridTemplateRows:'repeat(auto-fit,minmax(150px, 1fr))'
+     }}>
       {publications.map((publication, index) => (
         <React.Fragment key={index}>
           {publication.images.map((image, imageIndex) => (

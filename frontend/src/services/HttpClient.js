@@ -2,7 +2,7 @@
     try{
         const result = await fetch(url)
         const json = await result.json() ;
-        console.log(json)
+        console.log('json'+{json})
         return json; 
     } catch(error){
         throw new Error('Error searching for publications')
