@@ -72,8 +72,8 @@ const LoadImage = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between gap-2 font-roboto-flex">
-        <h3 className="font-semibold font-roboto-flex text-xl">Nueva Publicación</h3>
+      <div className="w-full flex flex-row justify-around gap-10 font-roboto-flex items-center  mb-5 ">
+        <h3 className="font-semibold font-roboto-flex text-xl ">Nueva Publicación</h3>
         {valorSeleccionado &&
           <button
             className="flex items-center justify-center bg-primary hover:bg-primaryPressed rounded-full min-w-[211px] min-h-[50px] max-w-96 font-semibold shadow-[-5px_1px_4px_0px_#00000038] text-loginButton md:text-button-font-size"
@@ -85,8 +85,8 @@ const LoadImage = () => {
         }
       </div>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 font-roboto-flex">
-        <section>
+      <form onSubmit={handleSubmit} className="flex flex-wrap justify-center gap-5 font-roboto-flex ">
+        <section className="flex flex-col gap-5">
           {imageUrl ?
             <img src={imageUrl} className="w-96 h-auto max-h-96 object-cover" alt="Imagen seleccionada" /> :
             <IconImage />
@@ -114,13 +114,13 @@ const LoadImage = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Nombre de la publicación"
-                className="w-80 h-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary items-center justify-center bg-gray-50"
+                className="w-80 h-6 px-3 py-2 border-[1px] border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary items-center justify-center bg-gray-50"
               />
             </div>
             <div className="flex flex-col my-5">
               <h6 className="py-2">Descripción</h6>
               <textarea
-                className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl bg-gray-50 w-96 h-32"
+                className="px-4 py-1 border-[1px] border-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-xl bg-gray-50 w-96 h-32"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
