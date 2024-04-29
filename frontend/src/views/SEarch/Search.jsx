@@ -85,7 +85,7 @@ export default function Search() {
         
       <hr className="border-disabled " />
      
-      <ul className="mt-5 pl-2 flex flex-col gap-3" 
+      <ul className="mt-5 pl-2 flex flex-col gap-3 transition-all"  
         style={ displayCate ? {display:'none'} : {display:'flex'}}>
        <li className="flex gap-2" onClick={()=>Categorias('VENTAS')} ><Coche/> Vehículos</li>
        <li className="flex gap-2" onClick={()=>Categorias('FINANZAS')}><Corbata/>Accesorios</li>

@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { GeneralButton } from "../../components/GeneralButton";
 import Publication from "../../components/Publication/Publication";
-import { Link } from "react-router-dom";
+import { Await, Link } from "react-router-dom";
 import NameProfile from "../../components/Publication/NameProfile";
 import Description from "../../components/Publication/Description";
-import IconoFlecha from "../../components/icons/IconArrow";
+import IconoFlecha from "../../components/icons/IconArrow"; 
+
+
 const AnotherProfile = () => {
+
+  const [userName, setUser] = useState('');
+  const [name,setName] = useState('');
+
+
   const [publicationType, setPublicationType] = useState("Element1"); 
   const publications = {
     Element1: [
@@ -34,8 +41,24 @@ const AnotherProfile = () => {
     setPublicationType(type); 
   };
 
+  
+
+  useEffect(() =>{
+    const userid = localStorage.getItem('idUser')
+    const urluser = 'http://34.49.227.176/users/id/'+userid;
+
+      fetch (urluser)
+       .then( response => response.json())
+       .then(dato => {
+        setUser(dato)
+        setName(dato.firstName + ' ' + dato.lastName)
+      })
+       
+      
+
+  }, []);
   return (
-    <section className="flex flex-row gap-11 p-2 h-full w-full max-lg:flex-col">
+    <section className="flex flex-row gap-11 p-4 h-full w-full max-lg:flex-col mt-24 ">
     <div className="w-[100%] max-w-[600px] p-9 flex gap-6  flex-col">
     <article>
     <IconoFlecha/>
@@ -43,8 +66,8 @@ const AnotherProfile = () => {
 
     
        <NameProfile
-       name={'Carina Rojas'}
-       followers={'15'}
+       name={name}
+       followers={userName.idUser}
        />
     
 
