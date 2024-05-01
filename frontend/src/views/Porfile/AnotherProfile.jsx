@@ -58,7 +58,7 @@ const AnotherProfile = () => {
 
   }, []);
   return (
-    <section className="flex flex-row gap-11 p-4 h-full w-full max-lg:flex-col mt-24 ">
+    <section className="flex flex-row gap-11 p-4 h-full w-full max-lg:flex-col mt-24 mb-24">
     <div className="w-[100%] max-w-[600px] p-9 flex gap-6  flex-col">
     <article>
     <IconoFlecha/>

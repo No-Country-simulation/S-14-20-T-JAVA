@@ -56,7 +56,7 @@ export default function Search() {
   }
 
  return (
-  <div className=" flex max-lg:flex-col max-lg:justify-start max-lg:items-center px-3 py-10 w-full h-full justify-center  ">
+  <div className=" flex max-lg:flex-col max-lg:justify-start max-lg:items-center px-3 py-10 w-full h-full justify-center my-24 ">
    <div className="w-[100%] max-w-[500px]">
    <section className="flex items-center gap-1">
       <IconFlecha/>

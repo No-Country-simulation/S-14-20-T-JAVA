@@ -5,7 +5,8 @@ import IconLike from "./icons/IconLike";
 import UserIconFilled from "./icons/UserIconFilled";
 
 const Post = ({id,image,user,title,body}) => {
- 
+   
+
   return (
     <main className="py-4 font-roboto-flex p-4 ">
       <header className="flex items-center justify-between mb-2">

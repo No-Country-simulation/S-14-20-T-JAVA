@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export default function Publications({Publications}) {
   console.log(Publications)
@@ -14,7 +15,8 @@ export default function Publications({Publications}) {
           <li key={ publication.id }
            className="snap-proximity snap-center">
 
-           <div className="relative snap-center max-w-96">
+            <Link to={'/details'} state={publication}>
+            <div className="relative snap-center max-w-96">
             <img src={`data:image/jpeg;base64,${publication.image[0].content} `} className="w-full h-auto snap-center snap-always"/>
 
             <p className="bg-opacity-40 bg-black text-white absolute  
@@ -27,6 +29,8 @@ export default function Publications({Publications}) {
               className="w-6 h-6 rounded-full "/>
              <h6 className="snap-center">{publication.id}</h6>
             </div>
+            </Link>
+           
           </li>
             )) 
           : <div>No resultados</div>}

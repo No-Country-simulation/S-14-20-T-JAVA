@@ -17,6 +17,7 @@ import Ocupacion from './components/FormularioEmprendedor/Ocupacion';
 import TuOcupacion from './components/FormularioEmprendedor/tuOcupacion';
 import Enviado from './components/FormularioEmprendedor/Enviado'
 import NewPost from './views/NewPost';
+import DetailsPost from './components/DetailsPost';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                 <Route path="/createpassword" element={<CreatePassword />} />
                 <Route path="/createuser" element={<CreateUser />} />
                 <Route path="/search" element={<Search />} />
+                <Route path='/details' element={<DetailsPost/>}/>
                 <Route path="/home" element={<Home />} />
 
                 {/* //* es la pantalla de vero que yo, Fer, le puse momentaneamente esa ruta para no tener que estar cambiando constantemente para verla. */}

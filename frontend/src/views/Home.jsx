@@ -3,7 +3,7 @@ import Posts from "@components/Posts"
 
 const Home = () => {
   return (
-    <main className=" bg-background animate-fade-in-delay rounded-sm py-3 h-full"> 
+    <main className=" bg-background animate-fade-in-delay rounded-sm py-3 h-full my-24"> 
     <section className="py-3">
       
     </section>
